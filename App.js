@@ -19,7 +19,7 @@ import { Router, Stack, Scene } from "react-native-router-flux";
 const App = () => (
   <Router>
     <Stack key="root">
-      <Scene key="login" hideNavBar component={LoginPage} />
+      <Scene initial key="login" hideNavBar component={LoginPage} />
       <Scene key="main" hideNavBar component={MainPage} />
 
       <Scene key="bible" hideNavBar component={BiblePage} />
