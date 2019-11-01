@@ -1,0 +1,22 @@
+export const CHANGE_VALUE = 'CHANGE_VALUE';
+
+export const SET_USER_DATA = "SET_USER_DATA";
+
+export const REMOVE_USER_DATA = "REMOVE_USER_DATA";
+
+export const GET_INFO_USER = "GET_INFO_USER";
+
+
+//BIBLE
+export const SET_CURRENT_VERSE = "SET_CURRENT_VERSE";
+
+export const SET_CURRENT_BOOK = "SET_CURRENT_BOOK";
+
+export const SET_CURRENT_CHAPTER = "SET_CURRENT_CHAPTER";
+
+export const INCREMENT_CHAPTER = "INCREMENT_CHAPTER";
+
+export const INCREMENT_BOOK = "INCREMENT_BOOK";
+
+export const ALL_BOOK = "ALL_BOOK";
+
