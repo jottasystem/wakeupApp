@@ -73,7 +73,7 @@ export default class RegisterPage extends Component {
                         secureTextEntry= {true}
                     />
 
-                    <TouchableOpacity onPress={() => Actions.register2()} style={styles.button}>
+                    <TouchableOpacity onPress={() => Actions.main()} style={styles.button}>
                         <Text style={styles.registerButton}>Start</Text>
                     </TouchableOpacity>
                 </View>

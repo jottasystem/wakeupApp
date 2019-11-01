@@ -55,12 +55,14 @@ export default class LoginPage extends Component {
                     <TouchableOpacity onPress={() => Actions.main()} style={styles.button}>
                         <Text style={styles.buttonText}>Login</Text>
                     </TouchableOpacity>
-                    <Text style={styles.singupText}>Don't remenber password?</Text>
+                    <TouchableOpacity onPress={() => Actions.forgot_password()}>
+                        <Text style={styles.signupButton2}>Don't remenber password?</Text>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.singupTextCont}>
-                    <Text style={styles.singupText}>Don't have an account yet?</Text>
+                    <Text style={styles.signupButton}>Don't have an account yet?</Text>
                     <TouchableOpacity onPress={() => Actions.register()}>
-                        <Text style={styles.signupButton}>Singup</Text>
+                        <Text style={styles.signupButton2}>Singup</Text>
                     </TouchableOpacity>
                 </View>
             </ImageBackground>
@@ -103,7 +105,12 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     signupButton: {
-        color: "#727272",
+        color: "#ffffff",
+        fontSize: 16,
+        fontWeight: '300'
+    },
+    signupButton2: {
+        color: "#ffffff",
         fontSize: 16,
         fontWeight: '500'
     },

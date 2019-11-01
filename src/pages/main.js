@@ -106,8 +106,8 @@ export default class CoreScreen extends Component {
                     <View style={styles.viewTabFooter}>
                         {tab1 && <MainScreen />}
                         {tab2 && <BibleScreen />}
-                        {tab3 && <CalendarScreen />}
-                        {tab4 && <ReviewScreen />}
+                        {tab3 && <ReviewScreen />}
+                        {tab4 && <CalendarScreen />}
                     </View>
                     <Footer>
                         <FooterTab style={styles.footer}>
@@ -127,14 +127,14 @@ export default class CoreScreen extends Component {
                             />
                             <ButtonFooter
                                 active={tab3}
-                                title={"Agenda"}
-                                icon={require("../images/feito4.png")}
+                                title={"Notificações"}
+                                icon={require("../images/feito1.png")}
                                 onPress={() => this.callStore()}
                             />
                             <ButtonFooter
                                 active={tab4}
-                                title={"Notificações"}
-                                icon={require("../images/feito1.png")}
+                                title={"Menu"}
+                                icon={require("../images/feito4.png")}
 
 
                                 onPress={() => this.callProgram()}
@@ -177,6 +177,6 @@ const styles = StyleSheet.create({
         justifyContent: "center"
     },
     footer: {
-        backgroundColor: colors.white
+        backgroundColor: colors.dark
     }
 });

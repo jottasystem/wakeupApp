@@ -4,7 +4,7 @@ import BackButton from '../components/buttons/BackButton';
 
 import { Header, Left, Body } from 'native-base';
 
-export default class BackupScreen extends Component {
+export default class ProfilePage extends Component {
   static navigationOptions = { header: null };
 
   render() {
