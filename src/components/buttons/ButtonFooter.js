@@ -17,11 +17,11 @@ const styles = StyleSheet.create({
   },
   containeActive: {
     alignItems: 'center',
-    backgroundColor: "red",
+    backgroundColor: "#757575",
   },
   textTab: {
     fontSize: 12,
-    color: "red",
+    color: "white",
     opacity:0.8
 
   },
@@ -30,9 +30,9 @@ const styles = StyleSheet.create({
     color: "white"
   },
   icone: {
-    width: 31,
-    height: 31,
-    tintColor: "red",
+    width: 27,
+    height: 27,
+    tintColor: "white",
     opacity:0.8
   },
   icone_active: {
