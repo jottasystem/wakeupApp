@@ -7,7 +7,7 @@ import {
     TouchableOpacity,
 } from "react-native";
 import { SliderBox } from 'react-native-image-slider-box';
-import { Card, Button, Icon } from 'react-native-elements';
+
 
 import { Actions } from "react-native-router-flux";
 import BackButton from '../components/buttons/BackButton';
@@ -43,19 +43,9 @@ export default class BackupScreen extends Component {
         <View style={{ flex: 2.5, backgroundColor: "red"}}>
           <SliderBox images={this.state.images} />
         </View>        
-        {/* <View style={{ flex: 2.5, backgroundColor: "green" }}> */}
-        <Card
-          title='HELLO WORLD'
-          image={require('../images/banner.jpg')}>
-          <Text style={{marginBottom: 10}}>
-            The idea with React Native Elements is more about component structure than actual design.
-          </Text>
-          <Button
-            icon={<Icon name='code' color='#ffffff' />}
-            buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
-            title='VIEW NOW' />
-        </Card>
-        {/* </View> */}
+        <View style={{ flex: 2.5, backgroundColor: "green" }}>
+          <Text>footer</Text>
+        </View>
         <View style={{ flex: 2, backgroundColor: "pink" }}>
           <Text>footer</Text>
         </View>
