@@ -14,9 +14,9 @@ import AdministratorPage from "./src/pages/admPage";
 
 import CorePage from "./src/pages/corePage";
 
-
 import { Router, Stack, Scene } from "react-native-router-flux";
 const App = () => (
+
   <Router>
     <Stack key="root">
       <Scene initial key="login" hideNavBar component={LoginPage} />
@@ -37,6 +37,7 @@ const App = () => (
       <Scene key="register2" hideNavBar component={Register2Page} />
     </Stack>
   </Router>
+
 
 )
 export default App;
