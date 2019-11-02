@@ -1,4 +1,8 @@
 import React from "react";
+import { Root } from "native-base";
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+
 import LoginPage from "./src/pages/login";
 import MainPage from "./src/pages/main";
 import RegisterPage from "./src/pages/register";
@@ -15,6 +19,7 @@ import AdministratorPage from "./src/pages/admPage";
 import CorePage from "./src/pages/corePage";
 
 import { Router, Stack, Scene } from "react-native-router-flux";
+import reducers from './src/store/reducers';
 const App = () => (
 
   <Router>
@@ -37,7 +42,6 @@ const App = () => (
       <Scene key="register2" hideNavBar component={Register2Page} />
     </Stack>
   </Router>
-
 
 )
 export default App;
