@@ -127,8 +127,8 @@ export default class CoreScreen extends Component {
                             />
                             <ButtonFooter
                                 active={tab3}
-                                title={"Notificações"}
-                                icon={require("../images/feito1.png")}
+                                title={"Calendário"}
+                                icon={require("../images/calendar.png")}
                                 onPress={() => this.callStore()}
                             />
                             <ButtonFooter
