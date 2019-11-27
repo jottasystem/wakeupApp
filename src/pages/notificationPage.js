@@ -1,4 +1,3 @@
-
 import React, { Component } from "react"
 import {
     StyleSheet,
@@ -13,7 +12,7 @@ import {
 } from "react-native"
 
 
-export default class Register2Page extends Component {
+export default class ContactPage extends Component {
 
     constructor() {
         super();
@@ -34,7 +33,7 @@ export default class Register2Page extends Component {
                 <View style={styles.containerlogo}>
                     <Image style={{ width: 150, height: 121 }}
                         source={require('../images/logo.png')} />
-                    <Text style={styles.logoText}>Estamos na tela main</Text>
+                    <Text style={styles.logoText}>Estamos na tela notification</Text>
                 </View>
                 <View style={styles.singupTextCont}>
                     <Text style={styles.singupText}>Don't' have an account yet?</Text>
@@ -122,6 +121,3 @@ const styles = StyleSheet.create({
         color: '#ffffff'
     }
 });
-
-
-

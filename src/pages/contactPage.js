@@ -4,120 +4,121 @@ import {
     Text,
     View,
     StatusBar,
-    Image,
     TextInput,
     TouchableOpacity,
-    TouchableHighlight,
-    ImageBackground,
-} from "react-native"
+    Image,
+} from "react-native";
+import { Actions } from "react-native-router-flux";
 
 
-export default class MainPage extends Component {
+export default class ContactPage extends Component {
 
-    constructor() {
-        super();
-        this.state = {
-            email: "",
-            password: ""
-        }
-    }
     render() {
         console.log(this.state)
         return (
-            <ImageBackground source={require("../images/tela.jpg")} style={styles.container}>
-                <StatusBar
-                    backgroundColor={"transparent"}
-                    translucent
-                    barStyle={"light-content"}
-                />
-                <View style={styles.containerlogo}>
-                    <Image style={{ width: 150, height: 121 }}
-                        source={require('../images/logo.png')} />
-                    <Text style={styles.logoText}>Estamos na tela main</Text>
-                </View>
-                <View style={styles.singupTextCont}>
-                    <Text style={styles.singupText}>Don't' have an account yet?</Text>
-                    <Text style={styles.signupButton}>Singup</Text>
-                </View>
-            </ImageBackground>
+          <View style={styles.container}>
+
+            <View style={{height: 60, justifyContent: 'space-between', alignItems: "center", backgroundColor: "#363636", flexDirection: 'row'}}>
+               {/* <Image style={styles.containerlogo }
+              source={require('../images/logo.png')} /> */}
+              <Text style={{color:'white', fontSize: 18,fontWeight: '600' }}>Contatos</Text>
+            </View>
+
+            <View style={styles.container2}>
+
+                    <View style={styles.space}></View>
+
+                    <Image style={{width: 200,height: 190}}
+                      source={require('../images/perfil.jpg')} />
+
+                    <View style={styles.space}></View>
+
+                    <Text>São Paulo - Comunidade Cristã Inove</Text>
+
+                    <View>
+                        <Image style={styles.containerlogo }
+                        source={require('../images/facebook.png')} /> 
+                        <Text>Av. Sezefredo Fagundes, 928 - Tucuruvi</Text>
+                    </View>
+
+                    <View style={styles.space}></View>
+
+                    <Text>Cascavel - Wake Up Church</Text>
+
+                    <View>
+                        <Image style={styles.containerlogo }
+                        source={require('../images/facebook.png')} /> 
+                        <Text>Rua Campos Elisios, 937</Text>
+                    </View>
+
+                    <View style={styles.space}></View>
+
+                    <Text>Redes Sociais</Text>
+
+                    <View>
+                        <TouchableOpacity onPress={() => Linking.openURL('https://www.instagram.com/wakeupmovementoficial/')} // TROCAR URL
+                            style={styles.viewMiddle}>
+                            <Image style={styles.containerlogo }
+                            source={require('../images/facebook.png')} /> 
+                            <Text>Wake Up Movement Oficial Tv</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => Linking.openURL('https://www.facebook.com/n/?wakeupmovementoficial')} // TROCAR URL
+                            style={styles.viewTop}>
+                            <Image style={styles.containerlogo }
+                            source={require('../images/instagram.png')} /> 
+                            <Text>@wakeupmovement</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => Linking.openURL('COLOCAR URL')} // TROCAR URL
+                            style={styles.viewMiddle}> 
+                            <Image style={styles.containerlogo }
+                            source={require('../images/instagram.png')} /> 
+                            <Text>Clique aqui e entre no nosso grupo do Whatsapp</Text>
+                        </TouchableOpacity>
+                    </View>
+
+                    <View style={styles.space}></View>
+                    
+              </View>
+            </View>
         )
     }
-
 }
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#455a64",
-        justifyContent: "center",
-        alignItems: "center",
+        backgroundColor: "#3E3E3E",
     },
-    viewLogo: {
-        flex: 1,
-        justifyContent: "flex-start",
-        alignItems: "center"
+    container2: {
+      flex: 1,
+      backgroundColor: "#3E3E3E",
+      justifyContent: "center",
+      alignItems: "center",
     },
-    singupText: {
-        color: "rgba(255,255,255,0.6)",
+    Text: {
+        width: 300,
+        height: 55,
+        fontSize: 25,
+        color: "#ffffff",       
+    },
+    space:{
+      width: 17,
+      height: 17,
+    },
+    viewTop: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    viewMiddle: {
+        marginTop: 8,
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    description: {
+        left: 8,
+        color: colors.white,
         fontSize: 16
-    },
-    singupTextCont: {
-        flexGrow: 1,
-        justifyContent: "center",
-        alignItems: "flex-end",
-        paddingVertical: 16,
-        flexDirection: "row"
-    },
-    viewEnter: {
-        flex: 0,
-        borderColor: "gray",
-        borderWidth: 50,
-        backgroundColor: "white",
-        borderWidth: 10,
-        marginTop: 10,
-        justifyContent: "flex-end",
-        alignItems: "center"
-    },
-    signupButton: {
-        color: "#ffffff",
-        fontSize: 16,
-        fontWeight: '500'
-    },
-    containerlogo: {
-        flexGrow: 2,
-        justifyContent: "flex-end",
-        alignItems: "center"
-    },
-    logoText: {
-        marginVertical: 15,
-        fontSize: 18,
-        color: "rgba(255,255,255,0.6)",
-    },
-    containerform: {
-        flexGrow: 1,
-        justifyContent: "center",
-        alignItems: "center"
-    },
-    inputBox: {
-        width: 300,
-        backgroundColor: "rgba(255,255,255,0.3)",
-        borderRadius: 25,
-        paddingHorizontal: 16,
-        fontSize: 16,
-        color: '#ffffff',
-        marginVertical: 10,
-    },
-    button: {
-        width: 300,
-        backgroundColor: "#1c313a",
-        borderRadius: 25,
-        marginVertical: 10,
-        paddingVertical: 12,
-        alignItems: "center"
-    },
-    buttonText: {
-        fontSize: 16,
-        fontWeight: '500',
-        color: '#ffffff'
     }
 });
+
+
+

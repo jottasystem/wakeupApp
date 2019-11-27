@@ -15,7 +15,7 @@ export default class SocialMidias extends Component {
             }
         })
     }
-    
+     
 
     shareInstagram = async () => {
         Linking.canOpenURL("instagram://profile/cristoematos").then(supported => {
