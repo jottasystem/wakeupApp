@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Button , ScrollView, Image, TouchableOpacity} from 'react-native';
-import BackButton from '../components/buttons/BackButton';
-import { Router } from "react-native-router-flux";
+import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity} from 'react-native';
 import { Actions } from "react-native-router-flux";
-
-import { Header, Left, Body } from 'native-base';
 
 export default class NotificationPage extends Component {
   static navigationOptions = { header: null };
@@ -18,20 +14,20 @@ export default class NotificationPage extends Component {
 
         <View style={styles.space}></View>
         <TouchableOpacity onPress={() => Actions.menu()} style={styles.button}>
-        <View style={{height: 60, justifyContent: 'space-between', alignItems: "center", backgroundColor: "#363636", flexDirection: 'row'}}>
-               {/* <Image style={styles.containerlogo }
-              source={require('../images/logo.png')} /> */}
-              <Text style={{color:'white', fontSize: 18,fontWeight: '600' }}> Notificação</Text>
+        <View style={styles.header}>
+               <Image style={styles.containerlogo }
+              source={require('../images/voltar.png')} />
+              <Text style={styles.titleHeader}> Notificação</Text>
             </View>
         </TouchableOpacity>
         
         <View style={styles.space}></View>
         
         <TouchableOpacity onPress={() => Actions.devocional()} style={styles.button}> 
-        <View style={{flex: 1,justifyContent: 'flex-start', alignItems: "center", flexDirection: 'row', borderColor:'white'}}>  
+        <View style={styles.viewNotifi}>  
         <Image style={styles.containerlogo }
           source={require('../images/logo.png')} />
-        <Text style={{color:'white', fontSize: 20,fontWeight: '400' }}>  Seja Bem-vindo!</Text>
+        <Text style={styles.textNotifi}>  Seja Bem-vindo!</Text>
         </View>
         </TouchableOpacity>
         
@@ -64,4 +60,28 @@ const styles = StyleSheet.create({
     width: 50,
     height: 41,
   },
+  header: {
+    height: 60, 
+    justifyContent: 'space-between', 
+    alignItems: "center", 
+    backgroundColor: "#363636", 
+    flexDirection: 'row',
+  },
+  titleHeader: {
+    color:'white', 
+    fontSize: 18,
+    fontWeight: '600', 
+  },
+  viewNotifi: {
+    flex: 1,
+    justifyContent: 'flex-start', 
+    alignItems: "center", 
+    flexDirection: 'row', 
+    borderColor:'white',
+  },
+  textNotifi: {
+    color:'white', 
+    fontSize: 20,
+    fontWeight: '400',
+  }
 });

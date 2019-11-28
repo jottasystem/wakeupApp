@@ -30,13 +30,13 @@ export default class RegisterPage extends Component {
     render() {
         console.log(this.state)
         return (
+            <ScrollView>
             <ImageBackground source={require("../images/tela.jpg")} style={styles.container}>
                 <StatusBar
                     backgroundColor={"transparent"}
                     translucent
                     barStyle={"light-content"}
                 />
-                <ScrollView>
                     <View style={styles.containerForm}>
                         <Text style={styles.Text}>  Register {Router.title} </Text>
                         <TextInput
@@ -95,9 +95,8 @@ export default class RegisterPage extends Component {
                             <Text style={styles.registerButton}>Start</Text>
                         </TouchableOpacity>
                     </View>
-                </ScrollView>
             </ImageBackground>
-
+            </ScrollView>
 
         )
     }

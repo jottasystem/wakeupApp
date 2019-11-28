@@ -5,7 +5,6 @@ import {
     View,
     TextInput,
     TouchableOpacity,
-    Image,
 } from "react-native";
 import { Actions } from "react-native-router-flux";
 
@@ -24,10 +23,10 @@ export default class alterPassPage extends Component {
         return (
           <View style={styles.container}>
 
-            <View style={{height: 60, justifyContent: 'space-between', alignItems: "center", backgroundColor: "#363636", flexDirection: 'row'}}>
-               {/* <Image style={styles.containerlogo }
-              source={require('../images/logo.png')} /> */}
-              <Text style={{color:'white', fontSize: 18,fontWeight: '600' }}> Pedido de Oração</Text>
+            <View style={styles.header}>
+               <Image style={styles.containerlogo }
+              source={require('../images/voltar.png')} />
+              <Text style={styles.textHeader}> Pedido de Oração</Text>
             </View>
 
             <View style={styles.container2}>
@@ -67,7 +66,6 @@ const styles = StyleSheet.create({
     container2: {
       flex: 1,
       backgroundColor: "#3E3E3E",
-    //   justifyContent: "center",
       alignItems: "center",
   },
     registerButton: {
@@ -100,7 +98,6 @@ const styles = StyleSheet.create({
         justifyContent:"flex-start",
     },
     button: {
-        //width: 200,
         backgroundColor: "#293438",
         borderRadius: 25,
         marginVertical: 30,
@@ -114,12 +111,22 @@ const styles = StyleSheet.create({
         height: 55,
         fontSize: 25,
         color: "#ffffff",
-        // marginVertical: 15,
-        
     },
     space:{
       width: 17,
       height: 17,
     },
+    header: {
+        height: 60, 
+        justifyContent: 'space-between', 
+        alignItems: "center", 
+        backgroundColor: "#363636", 
+        flexDirection: 'row',
+    },
+    textHeader: {
+        color:'white', 
+        fontSize: 18,
+        fontWeight: '600', 
+    }
 });
 

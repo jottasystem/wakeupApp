@@ -24,15 +24,15 @@ export default class DevocionalPage extends Component {
         return (
           <View style={styles.container}>
 
-            <View style={{height: 60, justifyContent: 'space-between', alignItems: "center", backgroundColor: "#363636", flexDirection: 'row'}}>
-               {/* <Image style={styles.containerlogo }
-              source={require('../images/logo.png')} /> */}
-              <Text style={{color:'white', fontSize: 18,fontWeight: '600' }}> Devocional</Text>
+            <View style={styles.header}>
+               <Image style={styles.containerlogo }
+              source={require('../images/voltar.png')} />
+              <Text style={styles.titleHeader}> Devocional</Text>
             </View>
 
             <View style={styles.container2}>
 
-                    <Image style={{width: 400,height: 190, justifyContent:"center", alignItems:"center" }}
+                    <Image style={styles.imageDevocional}
                         source={require('../images/banner3.jpg')} />
 
                     <View style={styles.space}></View>
@@ -63,7 +63,6 @@ const styles = StyleSheet.create({
     container2: {
       flex: 1,
       backgroundColor: "#3E3E3E",
-    //   justifyContent: "center",
       alignItems: "center",
   },
     registerButton: {
@@ -84,7 +83,6 @@ const styles = StyleSheet.create({
         marginVertical: 10,
     },
     button: {
-        //width: 200,
         backgroundColor: "#293438",
         borderRadius: 25,
         marginVertical: 30,
@@ -94,12 +92,8 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
     Text: {
-        // width: 300,
-        // height: 55,
         fontSize: 25,
         color: "#ffffff",
-        // marginVertical: 15,
-        
     },
     space:{
       width: 17,
@@ -110,6 +104,24 @@ const styles = StyleSheet.create({
         fontSize: 16,
         alignItems: 'flex-start',
         width:400,
+    },
+    header: {
+        height: 60, 
+        justifyContent: 'space-between', 
+        alignItems: "center", 
+        backgroundColor: "#363636", 
+        flexDirection: 'row',
+    },
+    titleHeader: {
+        color:'white', 
+        fontSize: 18,
+        fontWeight: '600', 
+    },
+    imageDevocional: {
+        width: 400,
+        height: 190, 
+        justifyContent:"center", 
+        alignItems:"center", 
     }
 });
 
