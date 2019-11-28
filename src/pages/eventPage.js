@@ -6,7 +6,7 @@ import { Actions } from "react-native-router-flux";
 
 import { Header, Left, Body } from 'native-base';
 
-export default class BackupScreen extends Component {
+export default class EventPage extends Component {
   static navigationOptions = { header: null };
 
   render() {
@@ -27,6 +27,14 @@ export default class BackupScreen extends Component {
         
         <View style={styles.space}></View>
         <View style={styles.space}></View>
+        <View style={styles.space}></View>
+
+        <View style={{flex: 1,justifyContent: 'flex-start', alignItems: "center", flexDirection: 'row'}}>  
+        <Image style={styles.icones}
+            source={require('../images/feito1.png')} />
+        <Text style={{color:'white', fontSize: 20,fontWeight: '300' }}>  Devocional</Text>
+        </View>
+
         <View style={styles.space}></View>  
         
         <View style={{flex: 1,justifyContent: 'flex-start', alignItems: "center", flexDirection: 'row'}}>  

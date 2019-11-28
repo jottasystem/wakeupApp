@@ -13,7 +13,7 @@ import colors from "../styles/colors";
 //#region Main TAB
 import MainScreen from "./corePage";
 import BibleScreen from "./biblePage";
-import CalendarScreen from "./eventPage";
+import MenuScreen from "./menuPage";
 import ReviewScreen from "./contactPage";
 
 export default class CoreScreen extends Component {
@@ -107,7 +107,7 @@ export default class CoreScreen extends Component {
                         {tab1 && <MainScreen />}
                         {tab2 && <BibleScreen />}
                         {tab3 && <ReviewScreen />}
-                        {tab4 && <CalendarScreen />}
+                        {tab4 && <MenuScreen />}
                     </View>
                     <Footer>
                         <FooterTab style={styles.footer}>
