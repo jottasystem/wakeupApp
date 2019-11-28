@@ -34,9 +34,7 @@ export default class alterPassPage extends Component {
             <View style={styles.container2}>
 
                     <View style={styles.space}></View>
-
-                    <Text style={styles.Text}> Alterar Senha</Text>
-
+                    <View style={styles.space}></View>
                     <View style={styles.space}></View>
 
                     <TextInput
@@ -79,7 +77,7 @@ const styles = StyleSheet.create({
     container2: {
       flex: 1,
       backgroundColor: "#3E3E3E",
-      justifyContent: "center",
+    //   justifyContent: "center",
       alignItems: "center",
   },
     registerButton: {
@@ -90,7 +88,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     inputBox: {
-        width: 300,
+        width: 350,
         height: 39,
         backgroundColor: "rgba(255,255,255,0.4)",
         borderRadius: 15,
@@ -123,19 +121,19 @@ const styles = StyleSheet.create({
     },
 });
 
-Alert.alert(
-    'Alert Title',
-    'My Alert Msg',
-    [
-      {text: 'Ask me later', onPress: () => console.log('Ask me later pressed')},
-      {
-        text: 'Cancel',
-        onPress: () => console.log('Cancel Pressed'),
-        style: 'cancel',
-      },
-      {text: 'OK', onPress: () => console.log('OK Pressed')},
-    ],
-    {cancelable: false},
-  );
+// Alert.alert(
+//     'Alert Title',
+//     'My Alert Msg',
+//     [
+//       {text: 'Ask me later', onPress: () => console.log('Ask me later pressed')},
+//       {
+//         text: 'Cancel',
+//         onPress: () => console.log('Cancel Pressed'),
+//         style: 'cancel',
+//       },
+//       {text: 'OK', onPress: () => console.log('OK Pressed')},
+//     ],
+//     {cancelable: false},
+//   );
 
 

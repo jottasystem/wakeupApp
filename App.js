@@ -18,6 +18,7 @@ import AdministratorPage from "./src/pages/admPage"; //EM ANDAMENTO - FER
 import CorePage from "./src/pages/corePage"; //EM ANDAMENTO - FER
 import MenuPage from "./src/pages/menuPage"; //EM ANDAMENTO - FER
 import AlterPasswordPage from "./src/pages/alterPassword" //EM ANDAMENTO - FER (TESTE DE ALERTA AQUI)
+import PrayPage from "./src/pages/prayPage" //EM ANDAMENTO - FER 
 
 import InputEventPage from "./src/pages/inputEventPage.js" // PENDENTE
 import InputDevocionalPage from "./src/pages/inputDevocionalPage" //PENDENTE
@@ -42,6 +43,7 @@ const App = () => (
       <Scene key="core" hideNavBar component={CorePage} />
       <Scene key="menu" hideNavBar component={MenuPage} />
       <Scene key="alter_page" hideNavBar component={AlterPasswordPage} />
+      <Scene key="pray" hideNavBar component={PrayPage} />
 
       <Scene key="input_event" hideNavBar component={InputEventPage} />
       <Scene key="input_devocional" hideNavBar component={InputDevocionalPage} />

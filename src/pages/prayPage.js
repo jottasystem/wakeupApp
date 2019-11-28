@@ -10,12 +10,12 @@ import {
 import { Actions } from "react-native-router-flux";
 
 
-export default class DevocionalPage extends Component {
+export default class alterPassPage extends Component {
     constructor() {
         super();
         this.state = {
-            titleText: "Teste Wake Up",
-            bodyText: 'Espero que dê certo em nome de Jesus.',
+            prayName: "",
+            pray: "",      
         }
     }
 
@@ -27,29 +27,33 @@ export default class DevocionalPage extends Component {
             <View style={{height: 60, justifyContent: 'space-between', alignItems: "center", backgroundColor: "#363636", flexDirection: 'row'}}>
                {/* <Image style={styles.containerlogo }
               source={require('../images/logo.png')} /> */}
-              <Text style={{color:'white', fontSize: 18,fontWeight: '600' }}> Devocional</Text>
+              <Text style={{color:'white', fontSize: 18,fontWeight: '600' }}> Pedido de Oração</Text>
             </View>
 
             <View style={styles.container2}>
 
-                    <Image style={{width: 400,height: 190, justifyContent:"center", alignItems:"center" }}
-                        source={require('../images/banner3.jpg')} />
-
+                    <View style={styles.space}></View>
+                    <View style={styles.space}></View>
                     <View style={styles.space}></View>
 
-                    {/* Pensar em como vai trazer o texto para o campinho | colocar botoes de compartilhar */}
+                    <TextInput
+                        onChangeText={value => this.setState({ prayName: value })}
+                        style={styles.inputBox}
+                        placeholder="Digite seu nome (Opcional)"
+                        underlineColorAndroid="rgba(0,0,0,0)"
+                        placeholderTextColor="#ffffff"
+                    />
+                    <TextInput
+                        onChangeText={value => this.setState({ pray: value })}
+                        style={styles.inputBox2}
+                        placeholder="Digite seu pedido aqui..."
+                        underlineColorAndroid="rgba(0,0,0,0)"
+                        placeholderTextColor="#ffffff"
+                    />
                     
-                    <Text style={styles.baseText}>
-                        <Text style={styles.titleText} onPress={this.onPressTitle}>
-                          {this.state.titleText}{'\n'}{'\n'}
-                        </Text>
-                        <Text numberOfLines={5}>
-                          {this.state.bodyText}
-                        </Text>
-                     </Text>
-           
-                    <View style={styles.space}></View>
-                    
+                    <TouchableOpacity onPress={() => Actions.alert()} style={styles.button}>
+                        <Text style={styles.registerButton}>Enviar</Text>
+                    </TouchableOpacity>
               </View>
             </View>
         )
@@ -74,7 +78,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     inputBox: {
-        width: 300,
+        width: 350,
         height: 39,
         backgroundColor: "rgba(255,255,255,0.4)",
         borderRadius: 15,
@@ -82,6 +86,18 @@ const styles = StyleSheet.create({
         fontSize: 16,
         color: '#ffffff',
         marginVertical: 10,
+        justifyContent:"flex-start",
+    },
+    inputBox2: {
+        width: 350,
+        height: 159,
+        backgroundColor: "rgba(255,255,255,0.4)",
+        borderRadius: 15,
+        paddingHorizontal: 16,
+        fontSize: 16,
+        color: '#ffffff',
+        marginVertical: 10,
+        justifyContent:"flex-start",
     },
     button: {
         //width: 200,
@@ -94,8 +110,8 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
     Text: {
-        // width: 300,
-        // height: 55,
+        width: 300,
+        height: 55,
         fontSize: 25,
         color: "#ffffff",
         // marginVertical: 15,
@@ -105,13 +121,5 @@ const styles = StyleSheet.create({
       width: 17,
       height: 17,
     },
-    baseText:{
-        color:'white',
-        fontSize: 16,
-        alignItems: 'flex-start',
-        width:400,
-    }
 });
-
-
 

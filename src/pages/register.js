@@ -7,6 +7,7 @@ import {
     TextInput,
     TouchableOpacity,
     ImageBackground,
+    ScrollView,
 } from "react-native";
 import { Router } from "react-native-router-flux";
 import { Actions } from "react-native-router-flux";
