@@ -14,7 +14,7 @@ import colors from "../styles/colors";
 import MainScreen from "./corePage";
 import BibleScreen from "./biblePage";
 import MenuScreen from "./menuPage";
-import ReviewScreen from "./contactPage";
+import ReviewScreen from "./eventPage";
 
 export default class CoreScreen extends Component {
     static navigationOptions = { header: null, gesturesEnabled: false };
@@ -156,12 +156,12 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         height: 60,
-        backgroundColor: "red",
+        backgroundColor: "#3E3E3E",
         marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
     },
     container: {
         flex: 1,
-        backgroundColor: "red",
+        backgroundColor: "#3E3E3E",
         paddingTop: 5
     },
     viewTabFooter: {

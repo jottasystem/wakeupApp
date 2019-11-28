@@ -56,6 +56,8 @@ export default class BackupScreen extends Component {
         <View style={styles.space}></View>  
         <Text style={{color:'white', fontSize: 18,fontWeight: '600' }}>   Devocional</Text>
         {/* <View style={styles.space}></View>      */}
+
+        <TouchableOpacity onPress={() => Actions.devocional()} style={styles.button}>
           <Card 
             containerStyle={{backgroundColor:'#3E3E3E', borderColor:'#3E3E3E'}}
             wrapperStyle={{backgroundColor:'#3E3E3E'}}
@@ -72,6 +74,7 @@ export default class BackupScreen extends Component {
               buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0, backgroundColor: "black"}}
               title='Leia mais' /> */}
           </Card>
+        </TouchableOpacity>  
         </View>
         <View style={styles.space}></View>  
         <Text style={{color:'white', fontSize: 18,fontWeight: '600' }}>   Novidades</Text>
