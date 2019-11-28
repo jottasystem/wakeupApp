@@ -18,61 +18,61 @@ export default class ContactPage extends Component {
         return (
           <View style={styles.container}>
 
-            <View style={{height: 60, justifyContent: 'space-between', alignItems: "center", backgroundColor: "#363636", flexDirection: 'row'}}>
-               {/* <Image style={styles.containerlogo }
-              source={require('../images/logo.png')} /> */}
-              <Text style={{color:'white', fontSize: 18,fontWeight: '600' }}>Contatos</Text>
+            <View style={styles.header}>
+               <Image style={styles.containerlogo }
+              source={require('../images/voltar.png')} />
+              <Text style={styles.titleHeader}>Contatos</Text>
             </View>
 
             <View style={styles.container2}>
 
                     <View style={styles.space}></View>
 
-                    <Image style={{width: 200,height: 190}}
+                    <Image style={styles.imagePerfil}
                       source={require('../images/perfil.jpg')} />
 
                     <View style={styles.space}></View>
 
-                    <Text>São Paulo - Comunidade Cristã Inove</Text>
+                    <Text style={styles.titles}> São Paulo - Comunidade Cristã Inove</Text>
 
-                    <View>
+                    <View style={styles.viewIcons}>
                         <Image style={styles.containerlogo }
                         source={require('../images/facebook.png')} /> 
-                        <Text>Av. Sezefredo Fagundes, 928 - Tucuruvi</Text>
+                        <Text style={style.texts}>Av. Sezefredo Fagundes, 928 - Tucuruvi</Text>
                     </View>
 
                     <View style={styles.space}></View>
 
-                    <Text>Cascavel - Wake Up Church</Text>
+                    <Text style={styles.titles}>Cascavel - Wake Up Church</Text>
 
-                    <View>
+                    <View style={styles.viewIcons}>
                         <Image style={styles.containerlogo }
                         source={require('../images/facebook.png')} /> 
-                        <Text>Rua Campos Elisios, 937</Text>
+                        <Text style={style.texts}> Rua Campos Elisios, 937</Text>
                     </View>
 
                     <View style={styles.space}></View>
 
-                    <Text>Redes Sociais</Text>
+                    <Text style={styles.titles}>Redes Sociais</Text>
 
                     <View>
                         <TouchableOpacity onPress={() => Linking.openURL('https://www.instagram.com/wakeupmovementoficial/')} // TROCAR URL
                             style={styles.viewMiddle}>
                             <Image style={styles.containerlogo }
                             source={require('../images/facebook.png')} /> 
-                            <Text>Wake Up Movement Oficial Tv</Text>
+                            <Text style={style.texts}> Wake Up Movement Oficial Tv</Text>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() => Linking.openURL('https://www.facebook.com/n/?wakeupmovementoficial')} // TROCAR URL
                             style={styles.viewTop}>
                             <Image style={styles.containerlogo }
                             source={require('../images/instagram.png')} /> 
-                            <Text>@wakeupmovement</Text>
+                            <Text style={style.texts}>@wakeupmovement</Text>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() => Linking.openURL('COLOCAR URL')} // TROCAR URL
                             style={styles.viewMiddle}> 
                             <Image style={styles.containerlogo }
                             source={require('../images/instagram.png')} /> 
-                            <Text>Clique aqui e entre no nosso grupo do Whatsapp</Text>
+                            <Text style={style.texts}>Clique aqui e entre no nosso grupo do Whatsapp</Text>
                         </TouchableOpacity>
                     </View>
 
@@ -91,14 +91,19 @@ const styles = StyleSheet.create({
     container2: {
       flex: 1,
       backgroundColor: "#3E3E3E",
-      justifyContent: "center",
+    //   justifyContent: "center",
       alignItems: "center",
     },
-    Text: {
-        width: 300,
+    texts: {
+        width: 200,
         height: 55,
         fontSize: 25,
-        color: "#ffffff",       
+        color: "white",       
+    },
+    titles: {
+        fontSize: 21,
+        fontWeight: 400,
+        color: "white",
     },
     space:{
       width: 17,
@@ -117,7 +122,28 @@ const styles = StyleSheet.create({
         left: 8,
         color: 'white',
         fontSize: 16
-    }
+    },
+    viewIcons:{
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent:"flex-start",         
+    },
+    header: {
+        height: 60, 
+        justifyContent: 'space-between', 
+        alignItems: "center", 
+        backgroundColor: "#363636", 
+        flexDirection: 'row'
+    },
+    titleHeader: {
+        color:'white', 
+        fontSize: 18,
+        fontWeight: '600'
+    },
+    imagePerfil:{
+        width: 200,
+        height: 190,
+    },
 });
 
 

@@ -156,12 +156,12 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         height: 60,
-        backgroundColor: "#3E3E3E",
+        backgroundColor: "#363636",
         marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
     },
     container: {
         flex: 1,
-        backgroundColor: "#3E3E3E",
+        backgroundColor: "#363636",
         paddingTop: 5
     },
     viewTabFooter: {

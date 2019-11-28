@@ -5,16 +5,11 @@ import {
     View,
     Image,
     TouchableOpacity,
-    Platform,
-    SafeAreaView,
-    FlatList,
     ScrollView,
 } from "react-native";
 import { SliderBox } from 'react-native-image-slider-box';
 import { Card, ListItem, Button, Icon } from 'react-native-elements'
 import { Actions } from "react-native-router-flux";
-import BackButton from '../components/buttons/BackButton';
-import { Header, Left, Body } from 'native-base';
 
 export default class BackupScreen extends Component {
 
@@ -32,12 +27,12 @@ export default class BackupScreen extends Component {
     render() {
       return (
       
-      <ScrollView style={{backgroundColor:'#3E3E3E'}}> 
+      <ScrollView style={styles.scrolls}> 
 
       <View style={styles.container}>
       
-        <View style={{height:60,justifyContent: 'space-between', alignItems: "center", backgroundColor: "#363636", flexDirection: 'row'}}>
-          <Image style={styles.containerlogo }
+        <View style={styles.header}>
+          <Image style={styles.containerlogo}
           source={require('../images/logo.png')} />
           <TouchableOpacity onPress={() => Actions.profile()} style={styles.button}>
             <Image style={styles.perfil}
@@ -45,17 +40,17 @@ export default class BackupScreen extends Component {
           </TouchableOpacity>
         </View>
 
-        {/* s<SliderBox images={this.state.images}/> */}
         <SliderBox
             images={this.state.images}
             onCurrentImagePressed={index =>
             console.warn('image ${index} pressed')
           }
-          
+   
         />
+
         <View style={styles.space}></View>  
-        <Text style={{color:'white', fontSize: 18,fontWeight: '600' }}>   Devocional</Text>
-        {/* <View style={styles.space}></View>      */}
+
+        <Text style={styles.titles}>   Devocional</Text>
 
         <TouchableOpacity onPress={() => Actions.devocional()} style={styles.button}>
           <Card 
@@ -64,21 +59,18 @@ export default class BackupScreen extends Component {
             imageStyle={{widht:60, height:185}}
             image={require('../images/banner3.jpg')}>
             
-
             <Text style={{marginBottom: 10, color: 'white', fontSize: 16}}>
               Entenda como surgiu esse movimento, saiba como essa história começou.
             </Text>
-            
-            {/* <Button 
-              // icon={<Icon name='code' color='#293438' />}
-              buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0, backgroundColor: "black"}}
-              title='Leia mais' /> */}
+
           </Card>
         </TouchableOpacity>  
         </View>
-        <View style={styles.space}></View>  
-        <Text style={{color:'white', fontSize: 18,fontWeight: '600' }}>   Novidades</Text>
-        {/* <View style={styles.space}></View>      */}
+
+        <View style={styles.space}></View> 
+
+        <Text style={styles.titles}>   Novidades</Text>
+
           <Card 
             containerStyle={{backgroundColor:'#3E3E3E', borderColor:'#3E3E3E'}}
             wrapperStyle={{backgroundColor:'#3E3E3E'}}
@@ -90,6 +82,7 @@ export default class BackupScreen extends Component {
               Conferência Energy - 18 de Dezembro as 19h - Teatro Mackenzie.
             </Text>
           </Card>
+
         </ScrollView> 
     );
   }
@@ -129,7 +122,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   cards: {
-    // flex: 2.5,
     justifyContent: "center",
     alignItems: "center",
     width: 150,
@@ -137,12 +129,10 @@ const styles = StyleSheet.create({
     backgroundColor: "green",
   },
   textCards: {
-    // flex: 2.5,
     justifyContent: "flex-start",
     alignItems: "flex-start",
     width: 150,
     height: 50,
-    // backgroundColor: "green",
   },
   spaceCards:{
     width: 20,
@@ -155,6 +145,21 @@ const styles = StyleSheet.create({
   imageCard:{
     width: 50,
     height: 50,
+  },
+  scrolls: {
+    backgroundColor:'#3E3E3E',
+  },
+  header: {
+    height:60,
+    justifyContent: 'space-between', 
+    alignItems: "center", 
+    backgroundColor: "#363636", 
+    flexDirection: 'row',
+  },
+  titles: {
+    color:'white', 
+    fontSize: 18,
+    fontWeight: '600', 
   },
 });
 

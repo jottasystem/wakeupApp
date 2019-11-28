@@ -67,8 +67,8 @@
 //             <ButtonCustom
 //               onPress={() => { this._toggleButton() }}
 //               width={"47%"}
-//               btncolor={this.state.books ? colors.blueMain : colors.white}
-//               textcolor={this.state.books ? colors.white : colors.blueMain}
+//               btncolor={this.state.books ? "#a3a3bb" : 'white'}
+//               textcolor={this.state.books ? 'white' : "#a3a3bb"}
 //               height={39}
 //               text={"LIVROS"}
 //             />
@@ -76,8 +76,8 @@
 //             <ButtonCustom
 //               onPress={() => { this._toggleButton() }}
 //               width={"47%"}
-//               btncolor={this.state.chapters ? colors.blueMain : colors.white}
-//               textcolor={this.state.chapters ? colors.white : colors.blueMain}
+//               btncolor={this.state.chapters ? "#a3a3bb" : 'white'}
+//               textcolor={this.state.chapters ? 'white' : "#a3a3bb"}
 //               height={39}
 //               text={"CAPÍTULOS"}
 //             />
@@ -102,7 +102,7 @@
 //                 data={this.state.biblesSearch}
 //                 keyExtractor={(item, index) => index.toString()}
 //                 renderItem={({ item, index }) =>
-//                   <TouchableOpacity key={index} onPress={() => { this._numberBook(index) }} style={this.props.bookCurrent == index ? [styles.nameBook, { backgroundColor: colors.activeMain, borderRadius: 5 }] : styles.nameBook}>
+//                   <TouchableOpacity key={index} onPress={() => { this._numberBook(index) }} style={this.props.bookCurrent == index ? [styles.nameBook, { backgroundColor: "#a3a3bb", borderRadius: 5 }] : styles.nameBook}>
 //                     <Text style={styles.textBooks}>{item.name}</Text>
 //                   </TouchableOpacity>}
 //               />
@@ -115,7 +115,7 @@
 //                   data={NVI}
 //                   keyExtractor={(item, index) => index.toString()}
 //                   renderItem={({ item, index }) =>
-//                     <TouchableOpacity key={index} onPress={() => { this._numberBook(index) }} style={this.props.bookCurrent == index ? [styles.nameBook, { backgroundColor: colors.activeMain, borderRadius: 5 }] : styles.nameBook}>
+//                     <TouchableOpacity key={index} onPress={() => { this._numberBook(index) }} style={this.props.bookCurrent == index ? [styles.nameBook, { backgroundColor: "#a3a3bb", borderRadius: 5 }] : styles.nameBook}>
 //                       <Text style={styles.textBooks}>{item.name}</Text>
 //                     </TouchableOpacity>}
 //                 />
@@ -156,11 +156,11 @@
 // const styles = StyleSheet.create({
 //   root: {
 //     flex: 1,
-//     backgroundColor: colors.blueMain,
+//     backgroundColor: "#24224a",
 //   },
 //   container: {
 //     flex: 1,
-//     backgroundColor: colors.white,
+//     backgroundColor: 'white',
 //     marginHorizontal: 16,
 //     marginBottom: 6,
 //     borderRadius: 10
@@ -176,7 +176,7 @@
 //     paddingHorizontal: 16
 //   },
 //   nameBook: {
-//     borderBottomColor: colors.activeMain,
+//     borderBottomColor: "#a3a3bb",
 //     borderBottomWidth: 0.3
 //   },
 //   textBooks: {
@@ -197,7 +197,7 @@
 //     borderRadius: 10,
 //     paddingHorizontal: 5,
 //     flexDirection: "row",
-//     backgroundColor: colors.white,
+//     backgroundColor: 'white',
 //     marginHorizontal: 15,
 //     justifyContent: "flex-start",
 //     alignItems: "center"

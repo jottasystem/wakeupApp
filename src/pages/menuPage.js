@@ -18,10 +18,10 @@ export default class MenuPage extends Component {
 
         <View style={styles.space}></View>
         <TouchableOpacity onPress={() => Actions.profile()} style={styles.button}>
-        <View style={{flex: 1,borderColor: 'white', justifyContent: 'flex-start', alignItems: "center", flexDirection: 'row'}}>  
-          <Image style={{width: 50,height: 41, borderRadius:27 }}
+        <View style={styles.header}>  
+          <Image style={styles.imagePerfil}
               source={require('../images/perfil.jpg')} />
-          <Text style={{color:'white', fontSize: 20,fontWeight: '300'}}>  Perfil</Text>
+          <Text style={styles.titleHeader}>  Perfil</Text>
         </View>
         </TouchableOpacity>
         
@@ -30,70 +30,70 @@ export default class MenuPage extends Component {
         <View style={styles.space}></View>
         
         <TouchableOpacity onPress={() => Actions.devocional()} style={styles.button}>  
-            <View style={{flex: 1,justifyContent: 'flex-start', alignItems: "center", flexDirection: 'row'}}>  
+            <View style={styles.viewsMenu}>  
                 <Image style={styles.icones}
                     source={require('../images/feito1.png')} />
-                <Text style={{color:'white', fontSize: 20,fontWeight: '300' }}>  Devocional</Text>
+                <Text style={styles.titlesMenu}>  Devocional</Text>
             </View>
         </TouchableOpacity>
 
         <View style={styles.space}></View>  
         
         <TouchableOpacity onPress={() => Actions.notification()} style={styles.button}> 
-        <View style={{flex: 1,justifyContent: 'flex-start', alignItems: "center", flexDirection: 'row'}}>  
+        <View style={styles.viewsMenu}>  
         <Image style={styles.icones}
             source={require('../images/feito1.png')} />
-        <Text style={{color:'white', fontSize: 20,fontWeight: '300' }}>  Notificações</Text>
+        <Text style={styles.titlesMenu}>  Notificações</Text>
         </View>
         </TouchableOpacity>
         
         <View style={styles.space}></View>
         
         <TouchableOpacity onPress={() => Actions.alter_page()} style={styles.button}> 
-        <View style={{flex: 1,justifyContent: 'flex-start', alignItems: "center", flexDirection: 'row'}}>  
+        <View style={styles.viewsMenu}>  
         <Image style={styles.icones}
             source={require('../images/senha.png')} />
-        <Text style={{color:'white', fontSize: 20,fontWeight: '300' }}>  Alterar a Senha</Text>
+        <Text style={styles.titlesMenu}>  Alterar a Senha</Text>
         </View>
         </TouchableOpacity>
 
         <View style={styles.space}></View> 
 
         <TouchableOpacity onPress={() => Actions.pray()} style={styles.button}> 
-        <View style={{flex: 1,justifyContent: 'flex-start', alignItems: "center", flexDirection: 'row'}}>  
+        <View style={styles.viewsMenu}>  
         <Image style={styles.icones}
             source={require('../images/oracao.png')} />
-        <Text style={{color:'white', fontSize: 20,fontWeight: '300' }}>  Pedido de Oração</Text>
+        <Text style={styles.titlesMenu}>  Pedido de Oração</Text>
         </View>
         </TouchableOpacity>
         
         <View style={styles.space}></View>
 
         <TouchableOpacity onPress={() => Actions.administrator()} style={styles.button}> 
-        <View style={{flex: 1,justifyContent: 'flex-start', alignItems: "center", flexDirection: 'row'}}>  
+        <View style={styles.viewsMenu}>  
         <Image style={styles.icones}
             source={require('../images/perfico.png')} />
-        <Text style={{color:'white', fontSize: 20,fontWeight: '300' }}>  Administrativo</Text>
+        <Text style={styles.titlesMenu}>  Administrativo</Text>
         </View>
         </TouchableOpacity>
         
         <View style={styles.space}></View>
 
         <TouchableOpacity onPress={() => Actions.contact()} style={styles.button}>  
-        <View style={{flex: 1,justifyContent: 'flex-start', alignItems: "center", flexDirection: 'row'}}>  
+        <View style={styles.viewsMenu}>  
         <Image style={styles.icones}
             source={require('../images/contato.png')} />
-        <Text style={{color:'white', fontSize: 20,fontWeight: '300' }}>  Fale Conosco</Text>
+        <Text style={styles.titlesMenu}>  Contatos</Text>
         </View>
         </TouchableOpacity>
         
         <View style={styles.space}></View>
         
         <TouchableOpacity onPress={() => Actions.term_politics()} style={styles.button}>  
-        <View style={{flex: 1,justifyContent: 'flex-start', alignItems: "center", flexDirection: 'row'}}>  
+        <View style={styles.viewsMenu}>  
         <Image style={styles.icones}
             source={require('../images/politica.png')} />
-        <Text style={{color:'white', fontSize: 20,fontWeight: '300' }}>  Termos e Politicas</Text>
+        <Text style={styles.titlesMenu}>  Termos e Politicas</Text>
         </View>
         </TouchableOpacity>
         
@@ -105,10 +105,10 @@ export default class MenuPage extends Component {
         <View style={styles.space}></View>
         
         <TouchableOpacity onPress={() => Actions.login()} style={styles.button}> 
-        <View style={{flex: 1,justifyContent: 'flex-start', alignItems: "center", flexDirection: 'row'}}>  
+        <View style={styles.viewsMenu}>  
         <Image style={styles.icones}
             source={require('../images/sair.png')} />
-        <Text style={{color:'white', fontSize: 20,fontWeight: '300' }}>  Sair</Text>
+        <Text style={styles.titlesMenu}>  Sair</Text>
         </View>
         </TouchableOpacity>
         
@@ -135,4 +135,32 @@ const styles = StyleSheet.create({
     width: 37,
     height: 41,
   },
+  header: {
+    flex: 1,
+    borderColor: 'white', 
+    justifyContent: 'flex-start', 
+    alignItems: "center", 
+    flexDirection: 'row',
+  },
+  titleHeader: {
+    color:'white', 
+    fontSize: 20,
+    fontWeight: '300',
+  },
+  titlesMenu: {
+    color:'white', 
+    fontSize: 20,
+    fontWeight: '300',
+  },
+  viewsMenu: {
+    flex: 1,
+    justifyContent: 'flex-start', 
+    alignItems: "center", 
+    flexDirection: 'row',
+  },
+  imagePerfil: {
+    width: 50,
+    height: 41, 
+    borderRadius:27, 
+  }
 });

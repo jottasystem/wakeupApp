@@ -16,9 +16,9 @@ export default class RegisterPage extends Component {
         super();
         this.state = {
             name: "",
-            cpf: "",
+            data_nasc: "",
             email: "",
-            datanasc: "",          
+            celular:"",         
         }
     }
 
@@ -27,17 +27,17 @@ export default class RegisterPage extends Component {
         return (
           <View style={styles.container}>
 
-            <View style={{height: 60, justifyContent: 'space-between', alignItems: "center", backgroundColor: "#363636", flexDirection: 'row'}}>
-               {/* <Image style={styles.containerlogo }
-              source={require('../images/logo.png')} /> */}
-              <Text style={{color:'white', fontSize: 18,fontWeight: '600' }}>Perfil</Text>
+            <View style={styles.header}>
+               <Image style={styles.containerlogo }
+              source={require('../images/voltar.png')} />
+              <Text style={styles.textHeader}>Perfil</Text>
             </View>
 
             <View style={styles.container2}>
 
                     <View style={styles.space}></View>
 
-                    <Image style={{width: 200,height: 190, borderRadius:80 }}
+                    <Image style={styles.imagePerfil}
                       source={require('../images/perfil.jpg')} />
 
                     <View style={styles.space}></View>
@@ -50,9 +50,9 @@ export default class RegisterPage extends Component {
                         placeholderTextColor="#ffffff"
                     />
                     <TextInput
-                        onChangeText={value => this.setState({ cpf: value })}
+                        onChangeText={value => this.setState({ data_nasc: value })}
                         style={styles.inputBox}
-                        placeholder="CPF"
+                        placeholder="Data de Nascimento"
                         underlineColorAndroid="rgba(0,0,0,0)"
                         placeholderTextColor="#ffffff"
                     />
@@ -64,9 +64,9 @@ export default class RegisterPage extends Component {
                         placeholderTextColor="#ffffff"
                     />
                     <TextInput
-                        onChangeText={value => this.setState({ datanasc: value })}
+                        onChangeText={value => this.setState({ celular: value })}
                         style={styles.inputBox}
-                        placeholder="Data de Nascimento"
+                        placeholder="Celular"
                         underlineColorAndroid="rgba(0,0,0,0)"
                         placeholderTextColor="#ffffff"
                         secureTextEntry= {true}
@@ -111,7 +111,6 @@ const styles = StyleSheet.create({
         marginVertical: 10,
     },
     button: {
-        //width: 200,
         backgroundColor: "#293438",
         borderRadius: 25,
         marginVertical: 30,
@@ -125,13 +124,28 @@ const styles = StyleSheet.create({
         height: 55,
         fontSize: 25,
         color: "#ffffff",
-        // marginVertical: 15,
-        
     },
     space:{
       width: 17,
       height: 17,
     },
+    header: {
+        height: 60, 
+        justifyContent: 'space-between', 
+        alignItems: "center", 
+        backgroundColor: "#363636", 
+        flexDirection: 'row',
+    },
+    textHeader: {
+        color:'white', 
+        fontSize: 18,
+        fontWeight: '600', 
+    },
+    imagePerfil: {
+        width: 200,
+        height: 190, 
+        borderRadius:80, 
+    }
 });
 
 

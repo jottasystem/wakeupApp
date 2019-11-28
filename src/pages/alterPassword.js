@@ -25,9 +25,9 @@ export default class alterPassPage extends Component {
         return (
           <View style={styles.container}>
 
-            <View style={{height: 60, justifyContent: 'space-between', alignItems: "center", backgroundColor: "#363636", flexDirection: 'row'}}>
-               {/* <Image style={styles.containerlogo }
-              source={require('../images/logo.png')} /> */}
+            <View style={styles.header}>
+               <Image style={styles.containerlogo }
+              source={require('../images/voltar.png')} /> {/* colocar o icone de voltar e atualizar o nome se for o caso */} 
               <Text style={{color:'white', fontSize: 18,fontWeight: '600' }}> Alterar Senha</Text>
             </View>
 
@@ -113,27 +113,19 @@ const styles = StyleSheet.create({
         fontSize: 25,
         color: "#ffffff",
         // marginVertical: 15,
-        
     },
     space:{
       width: 17,
       height: 17,
     },
+    header:{
+        height: 60, 
+        justifyContent: 'space-between', 
+        alignItems: "center", 
+        backgroundColor: "#363636", 
+        flexDirection: 'row',
+    },
 });
 
-// Alert.alert(
-//     'Alert Title',
-//     'My Alert Msg',
-//     [
-//       {text: 'Ask me later', onPress: () => console.log('Ask me later pressed')},
-//       {
-//         text: 'Cancel',
-//         onPress: () => console.log('Cancel Pressed'),
-//         style: 'cancel',
-//       },
-//       {text: 'OK', onPress: () => console.log('OK Pressed')},
-//     ],
-//     {cancelable: false},
-//   );
 
 
