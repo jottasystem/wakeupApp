@@ -28,6 +28,7 @@ export default class BackupScreen extends Component {
       return (
       
       <ScrollView style={styles.scrolls}> 
+      <View style={styles.space}></View> 
 
       <View style={styles.container}>
       

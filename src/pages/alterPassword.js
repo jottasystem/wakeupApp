@@ -25,9 +25,11 @@ export default class alterPassPage extends Component {
         return (
           <View style={styles.container}>
 
+            <View style={styles.space}></View>
+            
             <View style={styles.header}>
                <Image style={styles.containerlogo }
-              source={require('../images/voltar.png')} /> {/* colocar o icone de voltar e atualizar o nome se for o caso */} 
+              source={require('../images/voltar.png')} />  
               <Text style={{color:'white', fontSize: 18,fontWeight: '600' }}> Alterar Senha</Text>
             </View>
 
@@ -120,11 +122,17 @@ const styles = StyleSheet.create({
     },
     header:{
         height: 60, 
-        justifyContent: 'space-between', 
+        justifyContent: 'flex-start', 
         alignItems: "center", 
         backgroundColor: "#363636", 
         flexDirection: 'row',
     },
+    containerlogo: {
+        justifyContent: "center",
+        alignItems: "flex-start",
+        width: 20,
+        height: 11,
+    }
 });
 
 

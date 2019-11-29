@@ -110,7 +110,7 @@ button: {
 },
 buttonText: {
     fontSize: 16,
-    fontWeight: '500',
+    // fontWeight: '500',
     color: '#ffffff',
     alignItems: 'center'
 }

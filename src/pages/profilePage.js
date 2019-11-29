@@ -26,6 +26,7 @@ export default class RegisterPage extends Component {
         console.log(this.state)
         return (
           <View style={styles.container}>
+          <View style={styles.space}></View>    
 
             <View style={styles.header}>
                <Image style={styles.containerlogo }
@@ -131,7 +132,7 @@ const styles = StyleSheet.create({
     },
     header: {
         height: 60, 
-        justifyContent: 'space-between', 
+        justifyContent: 'flex-start', 
         alignItems: "center", 
         backgroundColor: "#363636", 
         flexDirection: 'row',
@@ -145,7 +146,13 @@ const styles = StyleSheet.create({
         width: 200,
         height: 190, 
         borderRadius:80, 
-    }
+    },
+    containerlogo: {
+        justifyContent: "flex-start",
+        alignItems: "flex-start",
+        width: 20,
+        height: 21,
+    },
 });
 
 

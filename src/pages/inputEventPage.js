@@ -5,6 +5,8 @@ import {
     View,
     TextInput,
     TouchableOpacity,
+    Image,
+    ScrollView,
 } from "react-native";
 import { Actions } from "react-native-router-flux";
 
@@ -24,63 +26,66 @@ export default class alterPassPage extends Component {
     render() {
         console.log(this.state)
         return (
-          <View style={styles.container}>
+          <ScrollView style={styles.scrolls}> 
+            <View style={styles.container}>
 
-            <View style={styles.header}>
-               <Image style={styles.containerlogo }
-              source={require('../images/voltar.png')} />
-              <Text style={styles.textHeader}> Novo evento</Text>
-            </View>
+                <View style={styles.space}></View>
 
-            <View style={styles.container2}>
+                <View style={styles.header}>
+                <Image style={styles.containerlogo }
+                source={require('../images/voltar.png')} />
+                <Text style={styles.textHeader}> Novo evento</Text>
+                </View>
 
-                    <Image style={styles.imageDevocional}
-                        source={require('../images/banner3.jpg')} /> {/* alterar para imagem de input */}
+                <View style={styles.container2}>
 
-                    <View style={styles.space}></View>
-                    <View style={styles.space}></View>
+                <View style={styles.space}></View>
 
-                    <TextInput
-                        onChangeText={value => this.setState({ titleEvent: value })}
-                        style={styles.inputBox}
-                        placeholder="Título do evento"
-                        underlineColorAndroid="rgba(0,0,0,0)"
-                        placeholderTextColor="#ffffff"
-                    />
-                    <TextInput
-                        onChangeText={value => this.setState({ dateEvent: value })}
-                        style={styles.inputBox}
-                        placeholder="Data"
-                        underlineColorAndroid="rgba(0,0,0,0)"
-                        placeholderTextColor="#ffffff"
-                    />
-                    <TextInput
-                        onChangeText={value => this.setState({ timeEvent: value })}
-                        style={styles.inputBox}
-                        placeholder="horário"
-                        underlineColorAndroid="rgba(0,0,0,0)"
-                        placeholderTextColor="#ffffff"
-                    />
-                    <TextInput
-                        onChangeText={value => this.setState({ descriEvent: value })}
-                        style={styles.inputBox2}
-                        placeholder="Digite a descrição do evento aqui..."
-                        underlineColorAndroid="rgba(0,0,0,0)"
-                        placeholderTextColor="#ffffff"
-                    />
-                    <TextInput
-                        onChangeText={value => this.setState({ payEvent: value })}
-                        style={styles.inputBox}
-                        placeholder="Valor do ingresso"
-                        underlineColorAndroid="rgba(0,0,0,0)"
-                        placeholderTextColor="#ffffff"
-                    />
-                    
-                    <TouchableOpacity onPress={() => Actions.alert()} style={styles.button}>
-                        <Text style={styles.registerButton}>Enviar</Text>
-                    </TouchableOpacity>
-              </View>
-            </View>
+                        <Image style={styles.imageDevocional}
+                            source={require('../images/banner3.jpg')} />
+
+                        <TextInput
+                            onChangeText={value => this.setState({ titleEvent: value })}
+                            style={styles.inputBox}
+                            placeholder="Título do evento"
+                            underlineColorAndroid="rgba(0,0,0,0)"
+                            placeholderTextColor="#ffffff"
+                        />
+                        <TextInput
+                            onChangeText={value => this.setState({ dateEvent: value })}
+                            style={styles.inputBox}
+                            placeholder="Data"
+                            underlineColorAndroid="rgba(0,0,0,0)"
+                            placeholderTextColor="#ffffff"
+                        />
+                        <TextInput
+                            onChangeText={value => this.setState({ timeEvent: value })}
+                            style={styles.inputBox}
+                            placeholder="horário"
+                            underlineColorAndroid="rgba(0,0,0,0)"
+                            placeholderTextColor="#ffffff"
+                        />
+                        <TextInput
+                            onChangeText={value => this.setState({ descriEvent: value })}
+                            style={styles.inputBox2}
+                            placeholder="Digite a descrição do evento aqui..."
+                            underlineColorAndroid="rgba(0,0,0,0)"
+                            placeholderTextColor="#ffffff"
+                        />
+                        <TextInput
+                            onChangeText={value => this.setState({ payEvent: value })}
+                            style={styles.inputBox}
+                            placeholder="Valor do ingresso"
+                            underlineColorAndroid="rgba(0,0,0,0)"
+                            placeholderTextColor="#ffffff"
+                        />
+                        
+                        <TouchableOpacity onPress={() => Actions.alert()} style={styles.button}>
+                            <Text style={styles.registerButton}>Enviar</Text>
+                        </TouchableOpacity>
+                </View>
+                </View>
+            </ScrollView>
         )
     }
 }
@@ -144,7 +149,7 @@ const styles = StyleSheet.create({
     },
     header: {
         height: 60, 
-        justifyContent: 'space-between', 
+        justifyContent: 'flex-start', 
         alignItems: "center", 
         backgroundColor: "#363636", 
         flexDirection: 'row',
@@ -154,11 +159,20 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: '600', 
     },
+    containerlogo: {
+        justifyContent: "flex-start",
+        alignItems: "flex-start",
+        width: 20,
+        height: 21,
+    },
     imageDevocional: {
-        width: 400,
+        width: 350,
         height: 190, 
         justifyContent:"center", 
         alignItems:"center", 
-    }
+    },
+    scrolls: {
+        backgroundColor:'#3E3E3E',
+    },
 });
 

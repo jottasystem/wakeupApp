@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity} from 'react-native';
 import { Actions } from "react-native-router-flux";
+import { Card, ListItem, Button, Icon } from 'react-native-elements';
 
 export default class NotificationPage extends Component {
   static navigationOptions = { header: null };
@@ -22,29 +23,35 @@ export default class NotificationPage extends Component {
         </TouchableOpacity>
         
         <View style={styles.space}></View>
-        
-        <TouchableOpacity onPress={() => Actions.devocional()} style={styles.button}> 
-        <View style={styles.viewNotifi}>  
-        <Image style={styles.containerlogo }
-          source={require('../images/logo.png')} />
-        <Text style={styles.textNotifi}>  O começo de tudo</Text>
-        </View>
-        </TouchableOpacity>
 
         <TouchableOpacity onPress={() => Actions.devocional()} style={styles.button}> 
-        <View style={styles.viewNotifi}>  
-        <Image style={styles.containerlogo }
-          source={require('../images/logo.png')} />
-        <Text style={styles.textNotifi}>  Não desista de sonha</Text>
-        </View>
-        </TouchableOpacity>
-        
+        <Card 
+            containerStyle={{backgroundColor:'grey', borderColor:'grey'}}
+            wrapperStyle={{backgroundColor:'grey'}}>
+            <Text style={{marginBottom: 10, color: 'white', fontSize: 16}}>
+              O começo de tudo
+            </Text>
+          </Card>
+          </TouchableOpacity>
+
         <TouchableOpacity onPress={() => Actions.devocional()} style={styles.button}> 
-        <View style={styles.viewNotifi}>  
-        <Image style={styles.containerlogo }
-          source={require('../images/logo.png')} />
-        <Text style={styles.textNotifi}>  Ruja como um leão</Text>
-        </View>
+        <Card 
+            containerStyle={{backgroundColor:'grey', borderColor:'grey'}}
+            wrapperStyle={{backgroundColor:'grey'}}>
+            <Text style={{marginBottom: 10, color: 'white', fontSize: 16}}>
+              Não desista de sonhar
+            </Text>
+          </Card>
+          </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => Actions.devocional()} style={styles.button}> 
+        <Card 
+            containerStyle={{backgroundColor:'grey', borderColor:'grey'}}
+            wrapperStyle={{backgroundColor:'grey'}}>
+            <Text style={{marginBottom: 10, color: 'white', fontSize: 16}}>
+              Ruja como um leão
+            </Text>
+          </Card>  
         </TouchableOpacity>
 
         <View style={styles.space}></View>
@@ -78,7 +85,7 @@ const styles = StyleSheet.create({
   },
   header: {
     height: 60, 
-    justifyContent: 'space-between', 
+    justifyContent: 'flex-start', 
     alignItems: "center", 
     backgroundColor: "#363636", 
     flexDirection: 'row',
@@ -99,5 +106,11 @@ const styles = StyleSheet.create({
     color:'white', 
     fontSize: 20,
     fontWeight: '400',
-  }
+  },
+  containerlogo: {
+    justifyContent: "flex-start",
+    alignItems: "flex-start",
+    width: 20,
+    height: 21,
+},
 });

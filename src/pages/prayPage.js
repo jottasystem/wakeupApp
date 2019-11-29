@@ -5,6 +5,7 @@ import {
     View,
     TextInput,
     TouchableOpacity,
+    Image,
 } from "react-native";
 import { Actions } from "react-native-router-flux";
 
@@ -21,7 +22,10 @@ export default class alterPassPage extends Component {
     render() {
         console.log(this.state)
         return (
+            
+            
           <View style={styles.container}>
+          <View style={styles.space}></View>
 
             <View style={styles.header}>
                <Image style={styles.containerlogo }
@@ -118,7 +122,7 @@ const styles = StyleSheet.create({
     },
     header: {
         height: 60, 
-        justifyContent: 'space-between', 
+        justifyContent: 'flex-start', 
         alignItems: "center", 
         backgroundColor: "#363636", 
         flexDirection: 'row',
@@ -127,6 +131,12 @@ const styles = StyleSheet.create({
         color:'white', 
         fontSize: 18,
         fontWeight: '600', 
-    }
+    },
+    containerlogo: {
+        justifyContent: "flex-start",
+        alignItems: "flex-start",
+        width: 20,
+        height: 21,
+    },
 });
 
