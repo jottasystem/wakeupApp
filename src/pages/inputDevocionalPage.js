@@ -5,6 +5,7 @@ import {
     View,
     TextInput,
     TouchableOpacity,
+    Image,
 } from "react-native";
 import { Actions } from "react-native-router-flux";
 
@@ -24,6 +25,8 @@ export default class alterPassPage extends Component {
         return (
           <View style={styles.container}>
 
+            <View style={styles.space}></View>
+
             <View style={styles.header}>
                <Image style={styles.containerlogo }
               source={require('../images/voltar.png')} />
@@ -32,11 +35,10 @@ export default class alterPassPage extends Component {
 
             <View style={styles.container2}>
 
-                    <Image style={styles.imageDevocional}
-                        source={require('../images/banner3.jpg')} /> {/* alterar para imagem de input */}
+                <View style={styles.space}></View>
 
-                    <View style={styles.space}></View>
-                    <View style={styles.space}></View>
+                    <Image style={styles.imageDevocional}
+                        source={require('../images/banner3.jpg')} />
 
                     <TextInput
                         onChangeText={value => this.setState({ titlePray: value })}
@@ -81,7 +83,7 @@ const styles = StyleSheet.create({
     registerButton: {
         color: "#ffffff",
         fontSize: 16,
-        fontWeight: '500',  
+        // fontWeight: '500',  
         justifyContent: "center",
         alignItems: "center",
     },
@@ -128,7 +130,7 @@ const styles = StyleSheet.create({
     },
     header: {
         height: 60, 
-        justifyContent: 'space-between', 
+        justifyContent: 'flex-start', 
         alignItems: "center", 
         backgroundColor: "#363636", 
         flexDirection: 'row',
@@ -138,11 +140,17 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: '600', 
     },
+    containerlogo: {
+        justifyContent: "flex-start",
+        alignItems: "flex-start",
+        width: 20,
+        height: 21,
+    },
     imageDevocional: {
-        width: 400,
+        width: 350,
         height: 190, 
         justifyContent:"center", 
         alignItems:"center", 
-    }
+    },
 });
 

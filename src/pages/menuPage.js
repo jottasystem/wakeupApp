@@ -16,6 +16,7 @@ export default class MenuPage extends Component {
 
       <View style={styles.container}>
 
+      <View style={styles.space}></View>
         <View style={styles.space}></View>
         <TouchableOpacity onPress={() => Actions.profile()} style={styles.button}>
         <View style={styles.header}>  
@@ -29,7 +30,7 @@ export default class MenuPage extends Component {
         <View style={styles.space}></View>
         <View style={styles.space}></View>
         
-        <TouchableOpacity onPress={() => Actions.devocional()} style={styles.button}>  
+        <TouchableOpacity onPress={() => Actions.main_devocional()} style={styles.button}>  
             <View style={styles.viewsMenu}>  
                 <Image style={styles.icones}
                     source={require('../images/feito1.png')} />
@@ -145,12 +146,12 @@ const styles = StyleSheet.create({
   titleHeader: {
     color:'white', 
     fontSize: 20,
-    fontWeight: '300',
+    // fontWeight: '300',
   },
   titlesMenu: {
     color:'white', 
     fontSize: 20,
-    fontWeight: '300',
+    // fontWeight: '300',
   },
   viewsMenu: {
     flex: 1,

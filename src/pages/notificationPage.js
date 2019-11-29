@@ -25,7 +25,7 @@ export default class NotificationPage extends Component {
         
         <TouchableOpacity onPress={() => Actions.devocional()} style={styles.button}> 
         <View style={styles.viewNotifi}>  
-        <Image style={styles.containerlogo }
+        <Image style={styles.containerlogo2 }
           source={require('../images/logo.png')} />
         <Text style={styles.textNotifi}>  Seja Bem-vindo!</Text>
         </View>
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
   },
   header: {
     height: 60, 
-    justifyContent: 'space-between', 
+    justifyContent: 'flex-start', 
     alignItems: "center", 
     backgroundColor: "#363636", 
     flexDirection: 'row',
@@ -83,5 +83,17 @@ const styles = StyleSheet.create({
     color:'white', 
     fontSize: 20,
     fontWeight: '400',
-  }
+  },
+  containerlogo: {
+    justifyContent: "flex-start",
+    alignItems: "flex-start",
+    width: 20,
+    height: 21,
+  },
+  containerlogo2: {
+    justifyContent: "flex-start",
+    alignItems: "flex-start",
+    width: 28,
+    height: 26,
+  },
 });

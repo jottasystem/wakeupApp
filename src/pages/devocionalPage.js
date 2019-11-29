@@ -23,7 +23,8 @@ export default class DevocionalPage extends Component {
         console.log(this.state)
         return (
           <View style={styles.container}>
-
+            <View style={styles.space}></View>
+            
             <View style={styles.header}>
                <Image style={styles.containerlogo }
               source={require('../images/voltar.png')} />
@@ -40,7 +41,7 @@ export default class DevocionalPage extends Component {
                     {/* Pensar em como vai trazer o texto para o campinho | colocar botoes de compartilhar */}
                     
                     <Text style={styles.baseText}>
-                        <Text style={styles.titleText} onPress={this.onPressTitle}>
+                        <Text style={styles.titleHeader} onPress={this.onPressTitle}>
                           {this.state.titleText}{'\n'}{'\n'}
                         </Text>
                         <Text numberOfLines={5}>
@@ -107,7 +108,7 @@ const styles = StyleSheet.create({
     },
     header: {
         height: 60, 
-        justifyContent: 'space-between', 
+        justifyContent: 'flex-start', 
         alignItems: "center", 
         backgroundColor: "#363636", 
         flexDirection: 'row',
@@ -115,14 +116,20 @@ const styles = StyleSheet.create({
     titleHeader: {
         color:'white', 
         fontSize: 18,
-        fontWeight: '600', 
+        fontWeight: '600',
     },
     imageDevocional: {
         width: 400,
         height: 190, 
         justifyContent:"center", 
         alignItems:"center", 
-    }
+    },
+    containerlogo: {
+        justifyContent: "center",
+        alignItems: "flex-start",
+        width: 20,
+        height: 11,
+    },
 });
 
 
