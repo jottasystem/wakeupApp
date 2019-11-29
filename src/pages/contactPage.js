@@ -44,7 +44,7 @@ export default class ContactPage extends Component {
 
                     <View style={styles.viewIcons}>
                         <Image style={styles.containerlogo }
-                        source={require('../images/facebook.png')} /> 
+                        source={require('../images/localizacao.png')} /> 
                         <Text style={styles.texts}> Av. Sezefredo Fagundes, 928 - Tucuruvi</Text>
                     </View>
 
@@ -54,7 +54,7 @@ export default class ContactPage extends Component {
 
                     <View style={styles.viewIcons}>
                         <Image style={styles.containerlogo }
-                        source={require('../images/facebook.png')} /> 
+                        source={require('../images/localizacao.png')} /> 
                         <Text style={styles.texts}> Rua Campos Elisios, 937</Text>
                     </View>
                     {/* </View> */}
@@ -63,24 +63,24 @@ export default class ContactPage extends Component {
 
                     {/* <View> */}
                     {/* <Text style={styles.titles}>Redes Sociais</Text> */}
-                        <TouchableOpacity onPress={() => Linking.openURL('https://www.instagram.com/wakeupmovementoficial/')} // TROCAR URL
+                        <TouchableOpacity onPress={() => Linking.openURL('https://www.facebook.com/n/?wakeupmovementoficial')} // TROCAR URL
                             style={styles.viewMiddle}>
                             <Image style={styles.containerlogo }
                             source={require('../images/facebook.png')} /> 
                             <Text style={styles.texts}> Wake Up Movement Oficial Tv</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity onPress={() => Linking.openURL('https://www.facebook.com/n/?wakeupmovementoficial')} // TROCAR URL
+                        <TouchableOpacity onPress={() => Linking.openURL('https://www.instagram.com/wakeupmovementoficial/')} // TROCAR URL
                             style={styles.viewTop}>
                             <Image style={styles.containerlogo }
-                            source={require('../images/instagram.png')} /> 
-                            <Text style={styles.texts}> @wakeupmovement</Text>
+                            source={require('../images/insta.png')} /> 
+                            <Text style={styles.texts}> wakeupmovementoficial</Text>
                         </TouchableOpacity>
 
                         <TouchableOpacity onPress={() => Linking.openURL('COLOCAR URL')} // TROCAR URL
                             style={styles.viewMiddle}> 
                             <Image style={styles.containerlogo }
-                            source={require('../images/instagram.png')} /> 
+                            source={require('../images/whats.png')} /> 
                             <Text style={styles.texts}> entre no nosso grupo do Whatsapp</Text>
                         </TouchableOpacity>
                     </View>

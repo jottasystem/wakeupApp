@@ -22,23 +22,13 @@ export default class AdministratorPage extends Component {
       <ScrollView style={{backgroundColor:'#3E3E3E'}}> 
 
       <View style={styles.container2}>
-
-        <View style={styles.space}></View>
-        
-        <TouchableOpacity onPress={() => Actions.users()} style={styles.button}> 
-        <View style={styles.blocsMenu}>
-            <Image style={styles.icones}
-                source={require('../images/feito1.png')} />
-            <Text style={{color:'white', fontSize: 20,fontWeight: '300' }}>  Usuários</Text>
-        </View>
-        </TouchableOpacity>
         
         <View style={styles.space}></View>
 
         <TouchableOpacity onPress={() => Actions.input_devocional()} style={styles.button}> 
         <View style={styles.blocsMenu}>
             <Image style={styles.icones}
-                source={require('../images/senha.png')} />
+                source={require('../images/devocional.png')} />
             <Text style={{color:'white', fontSize: 20,fontWeight: '300' }}>  Publicações</Text>
         </View>
         </TouchableOpacity>
@@ -48,7 +38,7 @@ export default class AdministratorPage extends Component {
         <TouchableOpacity onPress={() => Actions.input_event()} style={styles.button}>  
         <View style={styles.blocsMenu}> 
             <Image style={styles.icones}
-                source={require('../images/oracao.png')} />
+                source={require('../images/calendar.png')} />
             <Text style={{color:'white', fontSize: 20,fontWeight: '300' }}>  Eventos</Text> 
         </View>
         </TouchableOpacity>

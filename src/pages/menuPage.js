@@ -33,7 +33,7 @@ export default class MenuPage extends Component {
         <TouchableOpacity onPress={() => Actions.main_devocional()} style={styles.button}>  
             <View style={styles.viewsMenu}>  
                 <Image style={styles.icones}
-                    source={require('../images/feito1.png')} />
+                    source={require('../images/devocional.png')} />
                 <Text style={styles.titlesMenu}>  Devocional</Text>
             </View>
         </TouchableOpacity>
@@ -89,14 +89,6 @@ export default class MenuPage extends Component {
         </TouchableOpacity>
         
         <View style={styles.space}></View>
-        
-        <TouchableOpacity onPress={() => Actions.term_politics()} style={styles.button}>  
-        <View style={styles.viewsMenu}>  
-        <Image style={styles.icones}
-            source={require('../images/politica.png')} />
-        <Text style={styles.titlesMenu}>  Termos e Politicas</Text>
-        </View>
-        </TouchableOpacity>
         
         <View style={styles.space}></View>
         <View style={styles.space}></View>
