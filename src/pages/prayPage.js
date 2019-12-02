@@ -28,9 +28,11 @@ export default class alterPassPage extends Component {
           <View style={styles.space}></View>
 
             <View style={styles.header}>
-               <Image style={styles.containerlogo }
-              source={require('../images/voltar.png')} />
-              <Text style={styles.textHeader}> Pedido de Oração</Text>
+                <TouchableOpacity onPress={() => Actions.menu()} style={styles.button}>
+                    <Image style={styles.containerlogo }
+                    source={require('../images/voltar.png')} />
+                </TouchableOpacity>
+                <Text style={styles.textHeader}> Pedido de Oração</Text>
             </View>
 
             <View style={styles.container2}>
@@ -133,7 +135,7 @@ const styles = StyleSheet.create({
         fontWeight: '600', 
     },
     containerlogo: {
-        justifyContent: "flex-start",
+        justifyContent: "center",
         alignItems: "flex-start",
         width: 20,
         height: 21,

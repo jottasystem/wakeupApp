@@ -20,7 +20,6 @@ export default class MenuPage extends Component {
         <View style={styles.space}></View>
         <TouchableOpacity onPress={() => Actions.profile()} style={styles.button}>
         <View style={styles.header}>
-        <View style={styles.space2}></View>   
           <Image style={styles.imagePerfil}
               source={require('../images/perfil.jpg')} />
           <Text style={styles.titleHeader}>  Perfil</Text>

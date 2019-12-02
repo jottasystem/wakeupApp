@@ -14,8 +14,10 @@ export default class AdministratorPage extends Component {
         <View style={styles.space}></View>
 
         <View style={styles.header}> 
+          <TouchableOpacity onPress={() => Actions.menu()} style={styles.button}> 
             <Image style={styles.containerlogo }
-          source={require('../images/voltar.png')} />
+            source={require('../images/voltar.png')} />
+          </TouchableOpacity>
           <Text style={styles.titleHeader}> Administrador</Text>
         </View>
 
@@ -33,7 +35,8 @@ export default class AdministratorPage extends Component {
         </View>
         </TouchableOpacity>
         
-        <View style={styles.space}></View> 
+        <View style={styles.space}></View>
+        <View style={styles.space}></View>         
 
         <TouchableOpacity onPress={() => Actions.input_event()} style={styles.button}>  
         <View style={styles.blocsMenu}> 
@@ -68,8 +71,8 @@ const styles = StyleSheet.create({
   icones: {
     justifyContent: "center",
     alignItems: "center",
-    width: 37,
-    height: 41,
+    width: 27,
+    height: 27,
   },
   titleHeader:{
     color:'white',
