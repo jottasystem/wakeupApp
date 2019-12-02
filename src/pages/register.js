@@ -21,82 +21,86 @@ export default class RegisterPage extends Component {
             cpf: "",
             data_nasc: "",
             email: "",
-            celular:"",
+            celular: "",
             password: "",
-            confirm_password: "",           
+            confirm_password: "",
         }
     }
 
     render() {
         console.log(this.state)
         return (
-            <ScrollView>
+
             <ImageBackground source={require("../images/tela.jpg")} style={styles.container}>
                 <StatusBar
                     backgroundColor={"transparent"}
                     translucent
                     barStyle={"light-content"}
                 />
-                    <View style={styles.containerForm}>
-                        <Text style={styles.Text}>  Register {Router.title} </Text>
-                        <TextInput
-                            onChangeText={value => this.setState({ name: value })}
-                            style={styles.inputBox}
-                            placeholder="Name"
-                            underlineColorAndroid="rgba(0,0,0,0)"
-                            placeholderTextColor="#ffffff"
-                        />
-                        <TextInput
-                            onChangeText={value => this.setState({ cpf: value })}
-                            style={styles.inputBox}
-                            placeholder="CPF"
-                            underlineColorAndroid="rgba(0,0,0,0)"
-                            placeholderTextColor="#ffffff"
-                        />
-                        <TextInput
-                            onChangeText={value => this.setState({ data_nasc: value })}
-                            style={styles.inputBox}
-                            placeholder="Data de Nascimento"
-                            underlineColorAndroid="rgba(0,0,0,0)"
-                            placeholderTextColor="#ffffff"
-                        />
-                        <TextInput
-                            onChangeText={value => this.setState({ email: value })}
-                            style={styles.inputBox}
-                            placeholder="E-mail"
-                            underlineColorAndroid="rgba(0,0,0,0)"
-                            placeholderTextColor="#ffffff"
-                        />
-                        <TextInput
-                            onChangeText={value => this.setState({ celular: value })}
-                            style={styles.inputBox}
-                            placeholder="Celular"
-                            underlineColorAndroid="rgba(0,0,0,0)"
-                            placeholderTextColor="#ffffff"
-                        />
-                        <TextInput
-                            onChangeText={value => this.setState({ password: value })}
-                            style={styles.inputBox}
-                            placeholder="Password"
-                            underlineColorAndroid="rgba(0,0,0,0)"
-                            placeholderTextColor="#ffffff"
-                            secureTextEntry= {true}
-                        />
-                        <TextInput
-                            onChangeText={value => this.setState({ confirm_password: value })}
-                            style={styles.inputBox}
-                            placeholder="Confirm Password"
-                            underlineColorAndroid="rgba(0,0,0,0)"
-                            placeholderTextColor="#ffffff"
-                            secureTextEntry= {true}
-                        />
-    
-                        <TouchableOpacity onPress={() => Actions.main()} style={styles.button}>
-                            <Text style={styles.registerButton}>Start</Text>
-                        </TouchableOpacity>
-                    </View>
+                <View style={styles.containerForm}>
+
+                    <Text style={styles.Text}>  Register {Router.title} </Text>
+
+                    <TextInput
+                        onChangeText={value => this.setState({ name: value })}
+                        style={styles.inputBox}
+                        placeholder="Name"
+                        underlineColorAndroid="rgba(0,0,0,0)"
+                        placeholderTextColor="#ffffff"
+                    />
+                    <TextInput
+                        onChangeText={value => this.setState({ cpf: value })}
+                        style={styles.inputBox}
+                        placeholder="CPF"
+                        underlineColorAndroid="rgba(0,0,0,0)"
+                        placeholderTextColor="#ffffff"
+                    />
+                    <TextInput
+                        onChangeText={value => this.setState({ data_nasc: value })}
+                        style={styles.inputBox}
+                        placeholder="Data de Nascimento"
+                        underlineColorAndroid="rgba(0,0,0,0)"
+                        placeholderTextColor="#ffffff"
+                    />
+                    <TextInput
+                        onChangeText={value => this.setState({ email: value })}
+                        style={styles.inputBox}
+                        placeholder="E-mail"
+                        underlineColorAndroid="rgba(0,0,0,0)"
+                        placeholderTextColor="#ffffff"
+                    />
+                    <TextInput
+                        onChangeText={value => this.setState({ celular: value })}
+                        style={styles.inputBox}
+                        placeholder="Celular"
+                        underlineColorAndroid="rgba(0,0,0,0)"
+                        placeholderTextColor="#ffffff"
+                    />
+                    <TextInput
+                        onChangeText={value => this.setState({ password: value })}
+                        style={styles.inputBox}
+                        placeholder="Password"
+                        underlineColorAndroid="rgba(0,0,0,0)"
+                        placeholderTextColor="#ffffff"
+                        secureTextEntry={true}
+                    />
+                    <TextInput
+                        onChangeText={value => this.setState({ confirm_password: value })}
+                        style={styles.inputBox}
+                        placeholder="Confirm Password"
+                        underlineColorAndroid="rgba(0,0,0,0)"
+                        placeholderTextColor="#ffffff"
+                        secureTextEntry={true}
+                    />
+
+                    <TouchableOpacity onPress={() => Actions.main()} style={styles.button}>
+                        <Text style={styles.registerButton}>Start</Text>
+                    </TouchableOpacity>
+
+                </View>
+
             </ImageBackground>
-            </ScrollView>
+
 
         )
     }
@@ -110,8 +114,7 @@ const styles = StyleSheet.create({
     },
     registerButton: {
         color: "#ffffff",
-        fontSize: 16,
-        // fontWeight: '500',  
+        fontSize: 16,  
         justifyContent: "center",
         alignItems: "center",
     },
@@ -126,7 +129,6 @@ const styles = StyleSheet.create({
         marginVertical: 10,
     },
     button: {
-        //width: 200,
         backgroundColor: "#293438",
         borderRadius: 25,
         marginVertical: 30,
@@ -140,8 +142,6 @@ const styles = StyleSheet.create({
         height: 55,
         fontSize: 25,
         color: "#ffffff",
-        // marginVertical: 15,
-        
     },
 });
 
