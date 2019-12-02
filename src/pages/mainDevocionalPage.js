@@ -14,13 +14,15 @@ export default class NotificationPage extends Component {
       <View style={styles.container}>
 
         <View style={styles.space}></View>
-        <TouchableOpacity onPress={() => Actions.menu()} style={styles.button}>
+
         <View style={styles.header}>
-               <Image style={styles.containerlogo }
+            <TouchableOpacity onPress={() => Actions.menu()} style={styles.button}> 
+              <Image style={styles.containerlogo }
               source={require('../images/voltar.png')} />
-              <Text style={styles.titleHeader}> Devocionais</Text>
-            </View>
-        </TouchableOpacity>
+            </TouchableOpacity>
+            <Text style={styles.titleHeader}> Devocionais</Text>
+        </View>
+        
         
         <View style={styles.space}></View>
 

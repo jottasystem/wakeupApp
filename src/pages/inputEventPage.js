@@ -32,8 +32,10 @@ export default class alterPassPage extends Component {
                 <View style={styles.space}></View>
 
                 <View style={styles.header}>
-                <Image style={styles.containerlogo }
-                source={require('../images/voltar.png')} />
+                    <TouchableOpacity onPress={() => Actions.administrator()} style={styles.button}> 
+                        <Image style={styles.containerlogo }
+                        source={require('../images/voltar.png')} />
+                    </TouchableOpacity>
                 <Text style={styles.textHeader}> Novo evento</Text>
                 </View>
 

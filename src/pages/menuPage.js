@@ -19,7 +19,7 @@ export default class MenuPage extends Component {
       <View style={styles.space}></View>
         <View style={styles.space}></View>
         <TouchableOpacity onPress={() => Actions.profile()} style={styles.button}>
-        <View style={styles.header}>  
+        <View style={styles.header}>
           <Image style={styles.imagePerfil}
               source={require('../images/perfil.jpg')} />
           <Text style={styles.titleHeader}>  Perfil</Text>
@@ -31,70 +31,71 @@ export default class MenuPage extends Component {
         <View style={styles.space}></View>
         
         <TouchableOpacity onPress={() => Actions.main_devocional()} style={styles.button}>  
-            <View style={styles.viewsMenu}>  
-                <Image style={styles.icones}
-                    source={require('../images/feito1.png')} />
+            <View style={styles.viewsMenu}>
+            <View style={styles.space2}></View>  
+                <Image style={{ width: 27, height: 27}}
+                    source={require('../images/devocional.png')} />
                 <Text style={styles.titlesMenu}>  Devocional</Text>
             </View>
         </TouchableOpacity>
 
+        <View style={styles.space}></View>
         <View style={styles.space}></View>  
         
         <TouchableOpacity onPress={() => Actions.notification()} style={styles.button}> 
-        <View style={styles.viewsMenu}>  
-        <Image style={styles.icones}
+        <View style={styles.viewsMenu}>
+        <View style={styles.space2}></View>   
+        <Image style={{ width: 27, height: 27}}
             source={require('../images/feito1.png')} />
         <Text style={styles.titlesMenu}>  Notificações</Text>
         </View>
         </TouchableOpacity>
         
         <View style={styles.space}></View>
+        <View style={styles.space}></View>
         
         <TouchableOpacity onPress={() => Actions.alter_page()} style={styles.button}> 
-        <View style={styles.viewsMenu}>  
-        <Image style={styles.icones}
+        <View style={styles.viewsMenu}>
+        <View style={styles.space2}></View>   
+        <Image style={{ width: 27, height: 27}}
             source={require('../images/senha.png')} />
         <Text style={styles.titlesMenu}>  Alterar a Senha</Text>
         </View>
         </TouchableOpacity>
 
         <View style={styles.space}></View> 
+        <View style={styles.space}></View>
 
         <TouchableOpacity onPress={() => Actions.pray()} style={styles.button}> 
         <View style={styles.viewsMenu}>  
-        <Image style={styles.icones}
+        <View style={styles.space2}></View> 
+        <Image style={{ width: 27, height: 27}}
             source={require('../images/oracao.png')} />
         <Text style={styles.titlesMenu}>  Pedido de Oração</Text>
         </View>
         </TouchableOpacity>
         
         <View style={styles.space}></View>
+        <View style={styles.space}></View>
 
         <TouchableOpacity onPress={() => Actions.administrator()} style={styles.button}> 
         <View style={styles.viewsMenu}>  
-        <Image style={styles.icones}
+        <View style={styles.space2}></View> 
+        <Image style={{ width: 27, height: 27}}
             source={require('../images/perfico.png')} />
         <Text style={styles.titlesMenu}>  Administrativo</Text>
         </View>
         </TouchableOpacity>
         
         <View style={styles.space}></View>
+        <View style={styles.space}></View>
 
         <TouchableOpacity onPress={() => Actions.contact()} style={styles.button}>  
         <View style={styles.viewsMenu}>  
-        <Image style={styles.icones}
+        <View style={styles.space2}></View> 
+        <Image style={{ width: 27, height: 27}}
             source={require('../images/contato.png')} />
         <Text style={styles.titlesMenu}>  Contatos</Text>
-        </View>
-        </TouchableOpacity>
-        
-        <View style={styles.space}></View>
-        
-        <TouchableOpacity onPress={() => Actions.term_politics()} style={styles.button}>  
-        <View style={styles.viewsMenu}>  
-        <Image style={styles.icones}
-            source={require('../images/politica.png')} />
-        <Text style={styles.titlesMenu}>  Termos e Politicas</Text>
         </View>
         </TouchableOpacity>
         
@@ -107,7 +108,8 @@ export default class MenuPage extends Component {
         
         <TouchableOpacity onPress={() => Actions.login()} style={styles.button}> 
         <View style={styles.viewsMenu}>  
-        <Image style={styles.icones}
+        <View style={styles.space2}></View> 
+        <Image style={{ width: 27, height: 27}}
             source={require('../images/sair.png')} />
         <Text style={styles.titlesMenu}>  Sair</Text>
         </View>
@@ -130,11 +132,15 @@ const styles = StyleSheet.create({
     width: 17,
     height: 17,
   },
+  space2:{
+    width: 10,
+    height: 10,
+  },
   icones: {
     justifyContent: "center",
     alignItems: "center",
-    width: 37,
-    height: 41,
+    width: 34,
+    height: 34,
   },
   header: {
     flex: 1,

@@ -14,41 +14,34 @@ export default class AdministratorPage extends Component {
         <View style={styles.space}></View>
 
         <View style={styles.header}> 
+          <TouchableOpacity onPress={() => Actions.menu()} style={styles.button}> 
             <Image style={styles.containerlogo }
-          source={require('../images/voltar.png')} />
+            source={require('../images/voltar.png')} />
+          </TouchableOpacity>
           <Text style={styles.titleHeader}> Administrador</Text>
         </View>
 
       <ScrollView style={{backgroundColor:'#3E3E3E'}}> 
 
       <View style={styles.container2}>
-
-        <View style={styles.space}></View>
-        
-        <TouchableOpacity onPress={() => Actions.users()} style={styles.button}> 
-        <View style={styles.blocsMenu}>
-            <Image style={styles.icones}
-                source={require('../images/feito1.png')} />
-            <Text style={{color:'white', fontSize: 20,fontWeight: '300' }}>  Usuários</Text>
-        </View>
-        </TouchableOpacity>
         
         <View style={styles.space}></View>
 
         <TouchableOpacity onPress={() => Actions.input_devocional()} style={styles.button}> 
         <View style={styles.blocsMenu}>
             <Image style={styles.icones}
-                source={require('../images/senha.png')} />
+                source={require('../images/devocional.png')} />
             <Text style={{color:'white', fontSize: 20,fontWeight: '300' }}>  Publicações</Text>
         </View>
         </TouchableOpacity>
         
-        <View style={styles.space}></View> 
+        <View style={styles.space}></View>
+        <View style={styles.space}></View>         
 
         <TouchableOpacity onPress={() => Actions.input_event()} style={styles.button}>  
         <View style={styles.blocsMenu}> 
             <Image style={styles.icones}
-                source={require('../images/oracao.png')} />
+                source={require('../images/calendar.png')} />
             <Text style={{color:'white', fontSize: 20,fontWeight: '300' }}>  Eventos</Text> 
         </View>
         </TouchableOpacity>
@@ -78,8 +71,8 @@ const styles = StyleSheet.create({
   icones: {
     justifyContent: "center",
     alignItems: "center",
-    width: 37,
-    height: 41,
+    width: 27,
+    height: 27,
   },
   titleHeader:{
     color:'white',

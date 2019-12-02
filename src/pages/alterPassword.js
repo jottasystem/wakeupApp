@@ -28,8 +28,10 @@ export default class alterPassPage extends Component {
             <View style={styles.space}></View>
             
             <View style={styles.header}>
-               <Image style={styles.containerlogo }
-              source={require('../images/voltar.png')} />  
+                <TouchableOpacity onPress={() => Actions.menu()} style={styles.button}> 
+                    <Image style={styles.containerlogo}
+                    source={require('../images/voltar.png')}/>
+                </TouchableOpacity>  
               <Text style={{color:'white', fontSize: 18,fontWeight: '600' }}> Alterar Senha</Text>
             </View>
 
