@@ -16,26 +16,26 @@ export default class alterPassPage extends Component {
         this.state = {
             before_password: "",
             password: "",
-            confirm_password: "",       
+            confirm_password: "",
         }
     }
 
     render() {
         console.log(this.state)
         return (
-          <View style={styles.container}>
+            <View style={styles.container}>
 
-            <View style={styles.space}></View>
-            
-            <View style={styles.header}>
-                <TouchableOpacity onPress={() => Actions.menu()} style={styles.button}> 
-                    <Image style={styles.containerlogo}
-                    source={require('../images/voltar.png')}/>
-                </TouchableOpacity>  
-              <Text style={{color:'white', fontSize: 18,fontWeight: '600' }}> Alterar Senha</Text>
-            </View>
+                <View style={styles.space}></View>
 
-            <View style={styles.container2}>
+                <View style={styles.header}>
+                    <TouchableOpacity onPress={() => Actions.menu()}>
+                        <Image style={styles.containerlogo}
+                            source={require('../images/voltar.png')} />
+                    </TouchableOpacity>
+                    <Text style={{ color: 'white', fontSize: 18, fontWeight: '600' }}> Alterar Senha</Text>
+                </View>
+
+                <View style={styles.container2}>
 
                     <View style={styles.space}></View>
                     <View style={styles.space}></View>
@@ -62,13 +62,13 @@ export default class alterPassPage extends Component {
                         underlineColorAndroid="rgba(0,0,0,0)"
                         placeholderTextColor="#ffffff"
                     />
-                    
+
                     <View style={styles.space}></View>
-                    
+
                     <TouchableOpacity onPress={() => Actions.alert()} style={styles.button}>
                         <Text style={styles.registerButton}>Salvar</Text>
                     </TouchableOpacity>
-              </View>
+                </View>
             </View>
         )
     }
@@ -79,15 +79,14 @@ const styles = StyleSheet.create({
         backgroundColor: "#3E3E3E",
     },
     container2: {
-      flex: 1,
-      backgroundColor: "#3E3E3E",
-    //   justifyContent: "center",
-      alignItems: "center",
-  },
+        flex: 1,
+        backgroundColor: "#3E3E3E",
+        alignItems: "center",
+    },
     registerButton: {
         color: "#ffffff",
         fontSize: 16,
-        fontWeight: '500',  
+        fontWeight: '500',
         justifyContent: "center",
         alignItems: "center",
     },
@@ -102,7 +101,6 @@ const styles = StyleSheet.create({
         marginVertical: 10,
     },
     button: {
-        //width: 200,
         backgroundColor: "#293438",
         borderRadius: 25,
         marginVertical: 30,
@@ -111,22 +109,15 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
     },
-    Text: {
-        width: 300,
-        height: 55,
-        fontSize: 25,
-        color: "#ffffff",
-        // marginVertical: 15,
+    space: {
+        width: 17,
+        height: 17,
     },
-    space:{
-      width: 17,
-      height: 17,
-    },
-    header:{
-        height: 60, 
-        justifyContent: 'flex-start', 
-        alignItems: "center", 
-        backgroundColor: "#363636", 
+    header: {
+        height: 60,
+        justifyContent: 'flex-start',
+        alignItems: "center",
+        backgroundColor: "#363636",
         flexDirection: 'row',
     },
     containerlogo: {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity } from 'react-native';
 import { Actions } from "react-native-router-flux";
 
 export default class NotificationPage extends Component {
@@ -8,34 +8,34 @@ export default class NotificationPage extends Component {
   render() {
     return (
 
-      <ScrollView style={{backgroundColor:'#3E3E3E'}}> 
+      <ScrollView style={{ backgroundColor: '#3E3E3E' }}>
 
-      <View style={styles.container}>
+        <View style={styles.container}>
 
-        <View style={styles.space}></View>
+          <View style={styles.space}></View>
 
-        <View style={styles.header}>
-          <TouchableOpacity onPress={() => Actions.menu()} style={styles.button}>
-               <Image style={styles.containerlogo }
+          <View style={styles.header}>
+            <TouchableOpacity onPress={() => Actions.menu()} >
+              <Image style={styles.containerlogo}
                 source={require('../images/voltar.png')} />
+            </TouchableOpacity>
+            <Text style={styles.titleHeader}> Notificação</Text>
+          </View>
+
+
+          <View style={styles.space}></View>
+
+          <TouchableOpacity onPress={() => Actions.devocional()} style={styles.button}>
+            <View style={styles.viewNotifi}>
+              <Image style={styles.containerlogo2}
+                source={require('../images/logo.png')} />
+              <Text style={styles.textNotifi}>  Seja Bem-vindo!</Text>
+            </View>
           </TouchableOpacity>
-          <Text style={styles.titleHeader}> Notificação</Text>
+
+          <View style={styles.space}></View>
+
         </View>
-        
-        
-        <View style={styles.space}></View>
-        
-        <TouchableOpacity onPress={() => Actions.devocional()} style={styles.button}> 
-        <View style={styles.viewNotifi}>  
-        <Image style={styles.containerlogo2 }
-          source={require('../images/logo.png')} />
-        <Text style={styles.textNotifi}>  Seja Bem-vindo!</Text>
-        </View>
-        </TouchableOpacity>
-        
-        <View style={styles.space}></View>
-      
-      </View>
       </ScrollView>
     );
   }
@@ -44,9 +44,9 @@ export default class NotificationPage extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor:'#3E3E3E',
+    backgroundColor: '#3E3E3E',
   },
-  space:{
+  space: {
     width: 17,
     height: 17,
   },
@@ -63,26 +63,26 @@ const styles = StyleSheet.create({
     height: 41,
   },
   header: {
-    height: 60, 
-    justifyContent: 'flex-start', 
-    alignItems: "center", 
-    backgroundColor: "#363636", 
+    height: 60,
+    justifyContent: 'flex-start',
+    alignItems: "center",
+    backgroundColor: "#363636",
     flexDirection: 'row',
   },
   titleHeader: {
-    color:'white', 
+    color: 'white',
     fontSize: 18,
-    fontWeight: '600', 
+    fontWeight: '600',
   },
   viewNotifi: {
     flex: 1,
-    justifyContent: 'flex-start', 
-    alignItems: "center", 
-    flexDirection: 'row', 
-    borderColor:'white',
+    justifyContent: 'flex-start',
+    alignItems: "center",
+    flexDirection: 'row',
+    borderColor: 'white',
   },
   textNotifi: {
-    color:'white', 
+    color: 'white',
     fontSize: 20,
     fontWeight: '400',
   },

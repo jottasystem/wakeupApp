@@ -10,7 +10,7 @@ import ButtonFooter from "../components/buttons/ButtonFooter";
 
 import colors from "../styles/colors";
 
-//#region Main TAB
+
 import MainScreen from "./corePage";
 import BibleScreen from "./biblePage";
 import MenuScreen from "./menuPage";

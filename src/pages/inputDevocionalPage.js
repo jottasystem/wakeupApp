@@ -16,28 +16,28 @@ export default class alterPassPage extends Component {
         this.state = {
             titlePray: "",
             authorPray: "",
-            textPray: "",      
+            textPray: "",
         }
     }
 
     render() {
         console.log(this.state)
         return (
-          <View style={styles.container}>
-
-            <View style={styles.space}></View>
-
-            <View style={styles.header}>
-                <TouchableOpacity onPress={() => Actions.administrator()} style={styles.button}> 
-                    <Image style={styles.containerlogo }
-                    source={require('../images/voltar.png')} />
-                </TouchableOpacity>
-              <Text style={styles.textHeader}> Novo devocional</Text>
-            </View>
-
-            <View style={styles.container2}>
+            <View style={styles.container}>
 
                 <View style={styles.space}></View>
+
+                <View style={styles.header}>
+                    <TouchableOpacity onPress={() => Actions.administrator()}>
+                        <Image style={styles.containerlogo}
+                            source={require('../images/voltar.png')} />
+                    </TouchableOpacity>
+                    <Text style={styles.textHeader}> Novo devocional</Text>
+                </View>
+
+                <View style={styles.container2}>
+
+                    <View style={styles.space}></View>
 
                     <Image style={styles.imageDevocional}
                         source={require('../images/banner3.jpg')} />
@@ -63,11 +63,11 @@ export default class alterPassPage extends Component {
                         underlineColorAndroid="rgba(0,0,0,0)"
                         placeholderTextColor="#ffffff"
                     />
-                    
+
                     <TouchableOpacity onPress={() => Actions.alert()} style={styles.button}>
                         <Text style={styles.registerButton}>Enviar</Text>
                     </TouchableOpacity>
-              </View>
+                </View>
             </View>
         )
     }
@@ -78,14 +78,13 @@ const styles = StyleSheet.create({
         backgroundColor: "#3E3E3E",
     },
     container2: {
-      flex: 1,
-      backgroundColor: "#3E3E3E",
-      alignItems: "center",
-  },
+        flex: 1,
+        backgroundColor: "#3E3E3E",
+        alignItems: "center",
+    },
     registerButton: {
         color: "#ffffff",
         fontSize: 16,
-        // fontWeight: '500',  
         justifyContent: "center",
         alignItems: "center",
     },
@@ -98,7 +97,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         color: '#ffffff',
         marginVertical: 10,
-        justifyContent:"flex-start",
+        justifyContent: "flex-start",
     },
     inputBox2: {
         width: 350,
@@ -109,7 +108,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         color: '#ffffff',
         marginVertical: 10,
-        justifyContent:"flex-start",
+        justifyContent: "flex-start",
     },
     button: {
         backgroundColor: "#293438",
@@ -126,21 +125,21 @@ const styles = StyleSheet.create({
         fontSize: 25,
         color: "#ffffff",
     },
-    space:{
-      width: 17,
-      height: 17,
+    space: {
+        width: 17,
+        height: 17,
     },
     header: {
-        height: 60, 
-        justifyContent: 'flex-start', 
-        alignItems: "center", 
-        backgroundColor: "#363636", 
+        height: 60,
+        justifyContent: 'flex-start',
+        alignItems: "center",
+        backgroundColor: "#363636",
         flexDirection: 'row',
     },
     textHeader: {
-        color:'white', 
+        color: 'white',
         fontSize: 18,
-        fontWeight: '600', 
+        fontWeight: '600',
     },
     containerlogo: {
         justifyContent: "flex-start",
@@ -150,9 +149,9 @@ const styles = StyleSheet.create({
     },
     imageDevocional: {
         width: 350,
-        height: 190, 
-        justifyContent:"center", 
-        alignItems:"center", 
+        height: 190,
+        justifyContent: "center",
+        alignItems: "center",
     },
 });
 
