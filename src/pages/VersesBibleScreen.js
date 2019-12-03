@@ -21,12 +21,12 @@ class VersesBibleScreen extends Component {
         return (
             <View style={styles.container}>
                 <Header
-                    transparent style={{ backgroundColor: colors.blueMain }}>
+                    transparent style={{ backgroundColor: colors.root }}>
                     <Left style={{ flex: 1 }}>
                         <BackButton arrowWhite />
                     </Left>
                     <Body style={{ flex: 1 }}>
-                        <Text>WakeUp </Text>
+                        <Text style={styles.textTitle}>Bíblia </Text>
                     </Body>
 
                     <Right style={{ flex: 1 }} >
@@ -70,7 +70,7 @@ export default connect(mapStateToProps, { incrementChapter })(VersesBibleScreen)
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: colors.blueMain
+        backgroundColor: colors.root
     },
     viewDetail: {
         flex: 1,
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
         fontSize: 21,
         fontWeight: "600",
         textAlign: "center",
-        color: colors.blueText
+        color: colors.white
     },
     textDescription: {
         fontSize: 20,
