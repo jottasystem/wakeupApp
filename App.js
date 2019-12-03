@@ -7,6 +7,9 @@ import LoginPage from "./src/pages/login"; // CONCLUIDO
 import MainPage from "./src/pages/main"; // CONCLUIDO
 import RegisterPage from "./src/pages/register"; // CONCLUIDO
 
+import DetailEventScreen from "./src/pages/DetailEventScreen";
+import DetailEventCalendarScreen from "./src/pages/DetailEventCalendarScreen";
+
 
 import BiblePage from "./src/pages/biblePage"; //EM ANDAMENTO - JOTTA
 import ContactPage from "./src/pages/contactPage"; // EM ANDAMENTO - FER
@@ -56,6 +59,8 @@ const App = () => (
           <Scene key="notification" hideNavBar component={NotificationPage} />
           <Scene key="users" hideNavBar component={UserPage} />
 
+          <Scene key="detail_calendar" component={DetailEventCalendarScreen} />
+          <Scene key="detail_event" component={DetailEventScreen} />
 
           <Scene key="term_politics" hideNavBar component={TermAndPoliticsPage} />
           <Scene key="forgot_password" hideNavBar component={ForgotPasswordPage} />

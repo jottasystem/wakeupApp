@@ -14,7 +14,7 @@ import colors from "../styles/colors";
 import MainScreen from "./corePage";
 import BibleScreen from "./biblePage";
 import MenuScreen from "./menuPage";
-import ReviewScreen from "./eventPage";
+import EventScreen from "./eventPage";
 
 export default class CoreScreen extends Component {
     static navigationOptions = { header: null, gesturesEnabled: false };
@@ -106,7 +106,7 @@ export default class CoreScreen extends Component {
                     <View style={styles.viewTabFooter}>
                         {tab1 && <MainScreen />}
                         {tab2 && <BibleScreen />}
-                        {tab3 && <ReviewScreen />}
+                        {tab3 && <EventScreen />}
                         {tab4 && <MenuScreen />}
                     </View>
                     <Footer>
