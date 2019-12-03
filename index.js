@@ -1,3 +1,5 @@
+console.disableYellowBox = true;
+
 /**
  * @format
  * @lint-ignore-every XPLATJSCOPYRIGHT1

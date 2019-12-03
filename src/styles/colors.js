@@ -12,6 +12,8 @@ const colors = {
 	purpleBorder: "#6f7095cc",
 	cherry_red: "#e30513",
 	greyish_brown: "#424242",
+	root: "#3E3E3E",
+	rootLight:"#807d7d",
 	black: "#000000",
 	white: "#ffffff",
 	off_white: "#fafafa",
