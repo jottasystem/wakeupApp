@@ -80,7 +80,7 @@ export default class RegisterPage extends Component {
                     <View style={styles.space}></View>
 
                     <Image style={styles.imagePerfil}
-                        source={require('../images/perfil.jpg')} />
+                        source={require('../images/perfico.png')} />
 
                     <View style={styles.space}></View>
 
@@ -188,8 +188,8 @@ const styles = StyleSheet.create({
         fontWeight: '600',
     },
     imagePerfil: {
-        width: 200,
-        height: 190,
+        width: 100,
+        height: 100,
         borderRadius: 80,
     },
     containerlogo: {

@@ -23,7 +23,13 @@ export default class BackupScreen extends Component {
         'http://wakeupmovement.com.br/wp-content/uploads/2019/05/a68a3514-ef15-49d1-927c-959ad988a46e.jpg',
         'http://wakeupmovement.com.br/wp-content/uploads/2019/05/youtube.jpg',
       ],
-      devocional: []
+      devocional: [
+        '../images/devo1.jpg'
+        // <Image source= {require('../images/devo2.jpg')}/>
+        // <Image source= {require('../images/devo2.png')}/>
+        // <Image source= {require('../images/devo4.jpg')}/>
+        // <Image source= {require('../images/devo5.jpg')}/>
+      ]
     };
     this.getDevocinal()
   }
@@ -53,7 +59,7 @@ export default class BackupScreen extends Component {
               source={require('../images/logo.png')} />
             <TouchableOpacity onPress={() => Actions.profile()} style={styles.button}>
               <Image style={styles.perfil}
-                source={require('../images/perfil.jpg')} />
+                source={require('../images/perfico.png')} />
             </TouchableOpacity>
           </View>
 
@@ -83,7 +89,7 @@ export default class BackupScreen extends Component {
                   containerStyle={{ backgroundColor: '#3E3E3E', borderColor: '#3E3E3E' }}
                   wrapperStyle={{ backgroundColor: '#3E3E3E' }}
                   imageStyle={{ widht: 20, height: 185 }}
-                  image={require('../images/banner3.jpg')}>
+                  image={require('../images/devocionaloficial.jpg')}>
 
                   <Text style={{ marginBottom: 10, color: 'white', fontSize: 16 }}>
                   {item.titlePray}
@@ -136,8 +142,8 @@ const styles = StyleSheet.create({
   perfil: {
     justifyContent: "flex-end",
     alignItems: "flex-end",
-    width: 50,
-    height: 41,
+    width: 30,
+    height: 30,
     borderRadius: 27,
   },
   containerCards: {

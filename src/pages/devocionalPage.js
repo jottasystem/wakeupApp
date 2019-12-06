@@ -38,7 +38,7 @@ export default class DevocionalPage extends Component {
                     <View style={styles.container2}>
 
                         <Image style={styles.imageDevocional}
-                            source={require('../images/banner3.jpg')} />
+                            source={require('../images/devocionaloficial.jpg')} />
 
                         <View style={styles.space}></View>
 
