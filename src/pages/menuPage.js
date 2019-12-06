@@ -36,9 +36,9 @@ export default class MenuPage extends Component {
                 <Image style={styles.containerlogo}
                   source={require('../images/voltar.png')} />
               </TouchableOpacity>
-              <Image style={styles.imagePerfil}
-                source={require('../images/perfil.jpg')} />
-              <Text style={styles.titleHeader}>  Perfil</Text>
+              {/* <Image style={styles.imagePerfil}
+                source={require('../images/tche.jpg')} /> */}
+              <Text style={styles.titleHeader}>  Menu</Text>
             </View>
           </TouchableOpacity>
 

@@ -31,7 +31,7 @@ export default class ContactPage extends Component {
                 <View style={styles.container2}>
 
                     <Image style={styles.imageDevocional}
-                        source={require('../images/banner3.jpg')} />
+                        source={require('../images/banner.jpg')} />
 
                     <View style={styles.space}></View>
                     <View>
