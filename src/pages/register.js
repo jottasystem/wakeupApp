@@ -30,7 +30,6 @@ export default class RegisterPage extends Component {
     }
 
     postUser = () => {
-console.log("chmaou")
         if (this.state.name == "" &&
             this.state.cpf == "" &&
             this.state.data_nasc == "" &&

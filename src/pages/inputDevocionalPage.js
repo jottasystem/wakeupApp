@@ -21,6 +21,7 @@ export default class alterPassPage extends Component {
             titlePray: "",
             authorPray: "",
             textPray: "",
+            loading: false
         }
     }
 
@@ -31,6 +32,7 @@ export default class alterPassPage extends Component {
             Alert.alert("Vazio!", "voce precisa passar informação para o novo devocional")
             return
         }
+        this.setState({ loading: true })
         let model = {
             "titlePray": this.state.titlePray,
             "authorPray": this.state.authorPray,
@@ -45,6 +47,8 @@ export default class alterPassPage extends Component {
         }).catch((error) => {
             console.log("error", error)
             Alert.alert("Falha", "Não foi possivel criar devocional :(")
+        }).finally((finish) => {
+            this.setState({ loading: false })
         })
     }
     render() {
@@ -93,7 +97,7 @@ export default class alterPassPage extends Component {
                         />
 
                         <TouchableOpacity onPress={() => this.postDevocional()} style={styles.button}>
-                            <Text style={styles.registerButton}>Enviar</Text>
+                            <Text style={styles.registerButton}>{this.state.loading ? "Enviando.." : "Enviar"}</Text>
                         </TouchableOpacity>
                     </View>
                 </InputScrollView>

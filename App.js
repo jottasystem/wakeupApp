@@ -33,6 +33,8 @@ import UserPage from "./src/pages/userPage.js"; // PENDENTE
 
 import { Router, Stack, Scene } from "react-native-router-flux";
 import reducers from './src/store/reducers'; //JOTTA ACHO QUE FALTOU VC COLOCAR ESSA PAGE
+import PrayAdmPage from "./src/pages/prayAdmin";
+import PrayPageDetail from "./src/pages/prayPageDetail";
 const App = () => (
   <Provider store={createStore(reducers, {})}>
     <Root>
@@ -51,6 +53,8 @@ const App = () => (
           <Scene key="alter_page" hideNavBar component={AlterPasswordPage} />
           <Scene key="pray" hideNavBar component={PrayPage} />
           <Scene key="verse_bible" component={VersesBibleScreen} />
+          <Scene key="pray_adm" hideNavBar component={PrayAdmPage} />
+          <Scene key="detail_pray" hideNavBar component={PrayPageDetail} />
 
           <Scene key="input_event" hideNavBar component={InputEventPage} />
           <Scene key="input_devocional" hideNavBar component={InputDevocionalPage} />

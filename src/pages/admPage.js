@@ -38,13 +38,13 @@ export default class AdministratorPage extends Component {
             <View style={styles.space}></View>
             <View style={styles.space}></View>
 
-            {/* <TouchableOpacity onPress={() => Actions.input_event()} style={styles.button}>
+            <TouchableOpacity onPress={() => Actions.pray_adm()} style={styles.button}>
               <View style={styles.blocsMenu}>
                 <Image style={styles.icones}
-                  source={require('../images/calendar.png')} />
-                <Text style={{ color: 'white', fontSize: 20, fontWeight: '300' }}>  Eventos</Text>
+                  source={require('../images/oracao.png')} />
+                <Text style={{ color: 'white', fontSize: 20, fontWeight: '300' }}>  Pedido de Oração</Text>
               </View>
-            </TouchableOpacity> */}
+            </TouchableOpacity>
 
             <View style={styles.space}></View>
 

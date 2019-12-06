@@ -22,7 +22,8 @@ export default class LoginPage extends Component {
         super();
         this.state = {
             email: "jotta.paulo27@gmail.com",
-            password: "102030"
+            password: "102030",
+            loading:false
         }
     }
 
@@ -31,6 +32,7 @@ export default class LoginPage extends Component {
             email: this.state.email,
             password: this.state.password
         }
+        this.setState({loading:true})
         Axios.post(API.URL.URLPROD + "login", model).then((sucess) => {
             console.log("suce", sucess)
             Actions.main()
@@ -38,6 +40,9 @@ export default class LoginPage extends Component {
         }).catch((error) => {
             console.log("error", error)
             Alert.alert("Falha", "Não foi possivel efetuar o login :(")
+        }).finally((finish)=>{
+            this.setState({loading:false})
+
         })
     }
     render() {
@@ -70,8 +75,8 @@ export default class LoginPage extends Component {
                         secureTextEntry={true}
                         placeholderTextColor="#ffffff"
                     />
-                    <TouchableOpacity onPress={() => this.Login()} style={styles.button}>
-                        <Text style={styles.buttonText}>Login</Text>
+                    <TouchableOpacity disabled={this.state.loading} onPress={() => this.Login()} style={styles.button}>
+                        <Text style={styles.buttonText}>{this.state.loading?"Carregando...":"Entrar"}</Text>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => Actions.forgot_password()}>
                         <Text style={styles.signupButton2}>Não lembra a senha?</Text>

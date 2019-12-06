@@ -30,7 +30,7 @@ export default class MenuPage extends Component {
 
           <View style={styles.space}></View>
           <View style={styles.space}></View>
-          <TouchableOpacity onPress={() => Actions.profile()} style={styles.button}>
+          <TouchableOpacity onPress={() => Actions.popTo("main")} style={styles.button}>
             <View style={styles.header}>
               <TouchableOpacity onPress={() => Actions.popTo("main")}>
                 <Image style={styles.containerlogo}
