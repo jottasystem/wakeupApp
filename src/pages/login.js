@@ -9,9 +9,12 @@ import {
     TouchableOpacity,
     TouchableHighlight,
     ImageBackground,
+    Alert,
+    AsyncStorage,
 } from "react-native";
 import { Actions } from "react-native-router-flux";
-
+import Axios from "axios";
+import API from "../config/AppConstants"
 
 export default class LoginPage extends Component {
 
@@ -21,6 +24,21 @@ export default class LoginPage extends Component {
             email: "",
             password: ""
         }
+    }
+
+    Login = () => {
+        let model = {
+            email: this.state.email,
+            password: this.state.password
+        }
+        Axios.post(API.URL.URLPROD + "login", model).then((sucess) => {
+            console.log("suce", sucess)
+            Actions.main()
+            AsyncStorage.setItem("user", JSON.stringify(sucess))
+        }).catch((error) => {
+            console.log("error", error)
+            Alert.alert("Falha", "Não foi possivel efetuar o login :(")
+        })
     }
     render() {
         console.log(this.state)
@@ -52,15 +70,15 @@ export default class LoginPage extends Component {
                         secureTextEntry={true}
                         placeholderTextColor="#ffffff"
                     />
-                    <TouchableOpacity onPress={() => Actions.main()} style={styles.button}>
+                    <TouchableOpacity onPress={() => this.Login()} style={styles.button}>
                         <Text style={styles.buttonText}>Login</Text>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => Actions.forgot_password()}>
-                        <Text style={styles.signupButton2}>Don't remenber password?</Text>
+                        <Text style={styles.signupButton2}>Não lembra a senha?</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.singupTextCont}>
-                    <Text style={styles.signupButton}>Don't have an account yet?</Text>
+                    <Text style={styles.signupButton}>Ainda não possui uma conta?</Text>
                     <TouchableOpacity onPress={() => Actions.register()}>
                         <Text style={styles.signupButton2}>Singup</Text>
                     </TouchableOpacity>

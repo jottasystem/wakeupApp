@@ -20,7 +20,18 @@ export default class RegisterPage extends Component {
             celular: "",
         }
     }
-
+    getInfo = () => {
+        let model = {
+            email: this.state.email,
+            password: this.state.password
+        }
+        Axios.post(API.URL.URLPROD + "login", model).then((sucess) => {
+            Actions.main()
+        }).catch((error) => {
+            console.log("error", error)
+            Alert.alert("Falha", "Não foi possivel efetuar o login :(")
+        })
+    }
     render() {
         console.log(this.state)
         return (
@@ -28,7 +39,7 @@ export default class RegisterPage extends Component {
                 <View style={styles.space}></View>
 
                 <View style={styles.header}>
-                    <TouchableOpacity onPress={() => Actions.menu()}>
+                    <TouchableOpacity onPress={() => Actions.main()}>
                         <Image style={styles.containerlogo}
                             source={require('../images/voltar.png')} />
                     </TouchableOpacity>

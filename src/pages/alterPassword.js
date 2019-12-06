@@ -6,29 +6,60 @@ import {
     TextInput,
     TouchableOpacity,
     Image,
+    Alert,
+    AsyncStorage,
 } from "react-native";
 import { Actions } from "react-native-router-flux";
+import Axios from "axios";
+import API from "../config/AppConstants"
 
 
 export default class alterPassPage extends Component {
     constructor() {
         super();
         this.state = {
-            before_password: "",
+            cpf: "",
             password: "",
             confirm_password: "",
         }
     }
 
+    updateUser = () => {
+
+        if (this.state.password != this.state.confirm_password) {
+            return Alert.alert("Confira", "As senhas digitadas não confere.")
+        }
+        if (this.state.cpf != this.props.user.cpf) {
+            return Alert.alert("Confira", "CPF não confere com o cadastrado.")
+        }
+        let model = {
+            "name": this.props.name,
+            "cpf": this.props.user.cpf,
+            "data_nasc": this.props.data_nasc,
+            "email": this.props.email,
+            "celular": this.props.celular,
+            "password": this.state.confirm_password
+        }
+
+        console.log("URL", API.URL.URLPROD + "register/" + this.props.user._id)
+        Axios.put(API.URL.URLPROD + "register/" + this.props.user._id, model).then((sucess) => {
+            console.log("suce", sucess)
+            AsyncStorage.setItem("user", JSON.stringify(sucess.data))
+            Actions.main()
+        }).catch((error) => {
+            console.log("error", error)
+            Alert.alert("Falha", "Não foi possivel trocar senha :(")
+        })
+    }
     render() {
-        console.log(this.state)
+        console.log("olha a porp", this.props)
         return (
             <View style={styles.container}>
 
                 <View style={styles.space}></View>
 
                 <View style={styles.header}>
-                    <TouchableOpacity onPress={() => Actions.menu()}>
+                    <TouchableOpacity onPress={() => Actions.login()}>
                         <Image style={styles.containerlogo}
                             source={require('../images/voltar.png')} />
                     </TouchableOpacity>
@@ -42,9 +73,9 @@ export default class alterPassPage extends Component {
                     <View style={styles.space}></View>
 
                     <TextInput
-                        onChangeText={value => this.setState({ before_password: value })}
+                        onChangeText={value => this.setState({ cpf: value })}
                         style={styles.inputBox}
-                        placeholder="Senha atual"
+                        placeholder="CPF"
                         underlineColorAndroid="rgba(0,0,0,0)"
                         placeholderTextColor="#ffffff"
                     />
@@ -65,7 +96,7 @@ export default class alterPassPage extends Component {
 
                     <View style={styles.space}></View>
 
-                    <TouchableOpacity onPress={() => Actions.alert()} style={styles.button}>
+                    <TouchableOpacity onPress={() => this.updateUser()} style={styles.button}>
                         <Text style={styles.registerButton}>Salvar</Text>
                     </TouchableOpacity>
                 </View>

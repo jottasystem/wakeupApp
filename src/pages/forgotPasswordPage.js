@@ -8,8 +8,11 @@ import {
     TextInput,
     TouchableOpacity,
     ImageBackground,
+    Alert,
 } from "react-native";
 import { Actions } from "react-native-router-flux";
+import Axios from "axios";
+import API from "../config/AppConstants"
 
 export default class ForgotPasswordPage extends Component {
 
@@ -18,6 +21,24 @@ export default class ForgotPasswordPage extends Component {
         this.state = {
             email: "",
         }
+    }
+
+    Forgot = () => {
+        let model = {
+            email: this.state.email,
+        }
+        Axios.post(API.URL.URLPROD + "forgot", model).then((sucess) => {
+            console.log("jott", sucess)
+            if (sucess.data) {
+                return Actions.alter_page({ user: sucess.data })
+            }else{
+                Alert.alert("Falha", "Não foi possivel localizar o usuario :(")
+            }
+
+        }).catch((error) => {
+            console.log("error", error)
+            Alert.alert("Falha", "Falha de sistema :(")
+        })
     }
     render() {
         console.log(this.state)
@@ -45,7 +66,7 @@ export default class ForgotPasswordPage extends Component {
                     />
                 </View>
                 <View style={styles.containerform2}>
-                    <TouchableOpacity onPress={() => Actions.login()} style={styles.button}>
+                    <TouchableOpacity onPress={() => this.Forgot()} style={styles.button}>
                         <Text style={styles.buttonText}>Send</Text>
                     </TouchableOpacity>
                 </View>
