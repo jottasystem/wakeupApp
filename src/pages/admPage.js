@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Button, ScrollView, Image, TouchableOpacity } from 'react-native';
-import BackButton from '../components/buttons/BackButton'; //Verificar com o Jotta para que serve esse button
 import { Actions } from "react-native-router-flux";
 
 
@@ -43,6 +42,17 @@ export default class AdministratorPage extends Component {
                 <Image style={styles.icones}
                   source={require('../images/calendar.png')} />
                 <Text style={{ color: 'white', fontSize: 20, fontWeight: '300' }}>  Eventos</Text>
+              </View>
+            </TouchableOpacity>
+
+            <View style={styles.space}></View>
+            <View style={styles.space}></View>
+
+            <TouchableOpacity onPress={() => Actions.input_devocional()} style={styles.button}>
+              <View style={styles.blocsMenu}>
+                <Image style={styles.icones}
+                  source={require('../images/oracao.png')} />
+                <Text style={{ color: 'white', fontSize: 20, fontWeight: '300' }}>  Pedido de Oração</Text>
               </View>
             </TouchableOpacity>
 

@@ -44,7 +44,7 @@ export default class alterPassPage extends Component {
                         <View style={styles.space}></View>
 
                         <Image style={styles.imageDevocional}
-                            source={require('../images/banner3.jpg')} />
+                            source={require('../images/banner.jpg')} />
 
                         <TextInput
                             onChangeText={value => this.setState({ titleEvent: value })}

@@ -11,28 +11,28 @@ import DetailEventScreen from "./src/pages/DetailEventScreen";
 import DetailEventCalendarScreen from "./src/pages/DetailEventCalendarScreen";
 
 
-import BiblePage from "./src/pages/biblePage"; //EM ANDAMENTO - JOTTA
-import ContactPage from "./src/pages/contactPage"; // EM ANDAMENTO - FER
-import EventPage from "./src/pages/eventPage"; //EM ANDAMENTO - JOTTA
-import ProfilePage from "./src/pages/profilePage"; //EM ANDAMENTO - FER
-import ForgotPasswordPage from "./src/pages/forgotPasswordPage"; // OK
-import TermAndPoliticsPage from "./src/pages/termPage"; // PENDENTE
-import AdministratorPage from "./src/pages/admPage"; //EM ANDAMENTO - FER
-import CorePage from "./src/pages/corePage"; //EM ANDAMENTO - FER
-import MenuPage from "./src/pages/menuPage"; //EM ANDAMENTO - FER
-import AlterPasswordPage from "./src/pages/alterPassword" //EM ANDAMENTO - FER (TESTE DE ALERTA AQUI)
-import PrayPage from "./src/pages/prayPage" //EM ANDAMENTO - FER 
+import BiblePage from "./src/pages/biblePage"; 
+import ContactPage from "./src/pages/contactPage"; 
+import EventPage from "./src/pages/eventPage"; 
+import ProfilePage from "./src/pages/profilePage"; 
+import ForgotPasswordPage from "./src/pages/forgotPasswordPage"; 
+import TermAndPoliticsPage from "./src/pages/termPage"; 
+import AdministratorPage from "./src/pages/admPage"; 
+import CorePage from "./src/pages/corePage"; 
+import MenuPage from "./src/pages/menuPage"; 
+import AlterPasswordPage from "./src/pages/alterPassword";
+import PrayPage from "./src/pages/prayPage";
 import VersesBibleScreen from "./src/pages/VersesBibleScreen";
 
-import InputEventPage from "./src/pages/inputEventPage.js" // PENDENTE
-import InputDevocionalPage from "./src/pages/inputDevocionalPage" //PENDENTE
-import MainDevocionalPage from "./src/pages/mainDevocionalPage"; //PENDENTE
-import DevocionalPage from "./src/pages/devocionalPage"; // PENDENTE
-import NotificationPage from "./src/pages/notificationPage"; // PENDENTE
-import UserPage from "./src/pages/userPage.js"; // PENDENTE
+import InputEventPage from "./src/pages/inputEventPage.js";
+import InputDevocionalPage from "./src/pages/inputDevocionalPage";
+import MainDevocionalPage from "./src/pages/mainDevocionalPage"; 
+import DevocionalPage from "./src/pages/devocionalPage"; 
+import NotificationPage from "./src/pages/notificationPage"; 
+import PrayAdmPage from "./src/pages/prayAdmPage"; 
 
 import { Router, Stack, Scene } from "react-native-router-flux";
-import reducers from './src/store/reducers'; //JOTTA ACHO QUE FALTOU VC COLOCAR ESSA PAGE
+import reducers from './src/store/reducers'; 
 const App = () => (
   <Provider store={createStore(reducers, {})}>
     <Root>
@@ -57,7 +57,7 @@ const App = () => (
           <Scene key="main_devocional" hideNavBar component={MainDevocionalPage} />
           <Scene key="devocional" hideNavBar component={DevocionalPage} />
           <Scene key="notification" hideNavBar component={NotificationPage} />
-          <Scene key="users" hideNavBar component={UserPage} />
+          <Scene key="pray_adm" hideNavBar component={PrayAdmPage} />
 
           <Scene key="detail_calendar" component={DetailEventCalendarScreen} />
           <Scene key="detail_event" component={DetailEventScreen} />
