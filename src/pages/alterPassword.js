@@ -93,6 +93,7 @@ export default class alterPassPage extends Component {
                         placeholder="Nova senha"
                         underlineColorAndroid="rgba(0,0,0,0)"
                         placeholderTextColor="#ffffff"
+                        secureTextEntry={true}
                     />
                     <TextInput
                         onChangeText={value => this.setState({ confirm_password: value })}
@@ -100,6 +101,7 @@ export default class alterPassPage extends Component {
                         placeholder="Confirme a senha"
                         underlineColorAndroid="rgba(0,0,0,0)"
                         placeholderTextColor="#ffffff"
+                        secureTextEntry={true}
                     />
 
                     <View style={styles.space}></View>
