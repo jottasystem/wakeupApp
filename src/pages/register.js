@@ -26,6 +26,7 @@ export default class RegisterPage extends Component {
             celular: "",
             password: "",
             confirm_password: "",
+            loading: false
         }
     }
 
@@ -39,7 +40,7 @@ export default class RegisterPage extends Component {
             Alert.alert("Erro!", "Todas informações devem ser preenchida :(")
             return
         }
-
+        this.setState({ loading: true })
         let model = {
             "name": this.state.name,
             "cpf": this.state.cpf,
@@ -56,11 +57,13 @@ export default class RegisterPage extends Component {
         }).catch((error) => {
             console.log("error", error)
             Alert.alert("Falha", "Não foi possivel efetuar o cadastro :(")
+        }).finally((finish) => {
+            this.setState({ loading: false })
         })
     }
 
     render() {
-        console.log(this.state)
+
         return (
 
             <ImageBackground source={require("../images/tela.jpg")} style={styles.container}>
@@ -69,14 +72,17 @@ export default class RegisterPage extends Component {
                     translucent
                     barStyle={"light-content"}
                 />
-                <View style={styles.containerForm}>
+                <InputScrollView topOffset={30} keyboardOffset={90} keyboardShouldPersistTaps="handled">
+                    <View style={styles.containerForm}>
 
-                    <Text style={styles.Text}>  Register {Router.title} </Text>
-                    <InputScrollView keyboardShouldPersistTaps="handled">
+                        <Text style={styles.Text}>  Register {Router.title} </Text>
                         <TextInput
                             onChangeText={value => this.setState({ name: value })}
                             style={styles.inputBox}
                             placeholder="Name"
+                            autoCapitalize
+                            autoFocus
+                            autoCorrect
                             underlineColorAndroid="rgba(0,0,0,0)"
                             placeholderTextColor="#ffffff"
                         />
@@ -84,6 +90,7 @@ export default class RegisterPage extends Component {
                             onChangeText={value => this.setState({ cpf: value })}
                             style={styles.inputBox}
                             placeholder="CPF"
+                            maxLength={11}
                             underlineColorAndroid="rgba(0,0,0,0)"
                             placeholderTextColor="#ffffff"
                         />
@@ -109,6 +116,7 @@ export default class RegisterPage extends Component {
                             onChangeText={value => this.setState({ celular: value })}
                             style={styles.inputBox}
                             placeholder="Celular"
+                            maxLength={11}
                             keyboardType={"phone-pad"}
                             underlineColorAndroid="rgba(0,0,0,0)"
                             placeholderTextColor="#ffffff"
@@ -131,11 +139,11 @@ export default class RegisterPage extends Component {
                         />
 
                         <TouchableOpacity onPress={() => this.postUser()} style={styles.button}>
-                            <Text style={styles.registerButton}>Cadastrar</Text>
+                            <Text style={styles.registerButton}>{this.state.loading ? "Cadastrando..." : "Cadastar"}</Text>
                         </TouchableOpacity>
-                    </InputScrollView>
 
-                </View>
+                    </View>
+                </InputScrollView>
 
             </ImageBackground>
 
@@ -144,6 +152,9 @@ export default class RegisterPage extends Component {
     }
 }
 const styles = StyleSheet.create({
+    containerForm: {
+        paddingTop: 100
+    },
     container: {
         flex: 1,
         backgroundColor: "#455a64",

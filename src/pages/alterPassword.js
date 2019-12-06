@@ -21,15 +21,19 @@ export default class alterPassPage extends Component {
             cpf: "",
             password: "",
             confirm_password: "",
+            loading: false
         }
     }
 
-    updateUser = () => {
-
+    updateUser = async () => {
+        this.setState({ loading: true })
         if (this.state.password != this.state.confirm_password) {
+           await this.setState({ loading: true })
+
             return Alert.alert("Confira", "As senhas digitadas não confere.")
         }
         if (this.state.cpf != this.props.user.cpf) {
+           await this.setState({ loading: true })
             return Alert.alert("Confira", "CPF não confere com o cadastrado.")
         }
         let model = {
@@ -46,13 +50,17 @@ export default class alterPassPage extends Component {
             console.log("suce", sucess)
             AsyncStorage.setItem("user", JSON.stringify(sucess.data))
             Actions.main()
-        }).catch((error) => {
+        }).catch(async (error) => {
+            await this.setState({ loading: false })
+
             console.log("error", error)
             Alert.alert("Falha", "Não foi possivel trocar senha :(")
+        }).finally(async (finish) => {
+            await this.setState({ loading: false })
+
         })
     }
     render() {
-        console.log("olha a porp", this.props)
         return (
             <View style={styles.container}>
 
@@ -97,7 +105,7 @@ export default class alterPassPage extends Component {
                     <View style={styles.space}></View>
 
                     <TouchableOpacity onPress={() => this.updateUser()} style={styles.button}>
-                        <Text style={styles.registerButton}>Salvar</Text>
+                        <Text style={styles.registerButton}>{this.state.loading ? "Salvando.." : "Salvar"}</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -150,7 +158,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         backgroundColor: "#363636",
         flexDirection: 'row',
-        paddingHorizontal:5
+        paddingHorizontal: 5
 
     },
     containerlogo: {

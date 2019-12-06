@@ -20,6 +20,7 @@ export default class ForgotPasswordPage extends Component {
         super();
         this.state = {
             email: "",
+            loading: false
         }
     }
 
@@ -27,17 +28,21 @@ export default class ForgotPasswordPage extends Component {
         let model = {
             email: this.state.email,
         }
+        this.setState({ loading: true })
+
         Axios.post(API.URL.URLPROD + "forgot", model).then((sucess) => {
             console.log("jott", sucess)
             if (sucess.data) {
                 return Actions.alter_page({ user: sucess.data })
-            }else{
+            } else {
                 Alert.alert("Falha", "Não foi possivel localizar o usuario :(")
             }
 
         }).catch((error) => {
             console.log("error", error)
             Alert.alert("Falha", "Falha de sistema :(")
+        }).finally((sucess) => {
+            this.setState({ loading: false })
         })
     }
     render() {
@@ -67,7 +72,7 @@ export default class ForgotPasswordPage extends Component {
                 </View>
                 <View style={styles.containerform2}>
                     <TouchableOpacity onPress={() => this.Forgot()} style={styles.button}>
-                        <Text style={styles.buttonText}>Send</Text>
+                        <Text style={styles.buttonText}>{ this.state.loading?"Enviando...":"Enviar"}</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.containerform3}>
