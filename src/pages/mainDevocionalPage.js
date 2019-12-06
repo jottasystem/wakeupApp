@@ -63,40 +63,9 @@ export default class NotificationPage extends Component {
                   </Text>
                 </Card>
               </TouchableOpacity>
-
-
-
-
-
             }
           />
-
-
-
-
-
-
-
-          {/* <TouchableOpacity onPress={() => Actions.devocional()} style={styles.button}>
-            <Card
-              containerStyle={{ backgroundColor: 'grey', borderColor: 'grey' }}
-              wrapperStyle={{ backgroundColor: 'grey' }}>
-              <Text style={{ marginBottom: 10, color: 'white', fontSize: 16 }}>
-                Não desista de sonhar
-            </Text>
-            </Card>
-          </TouchableOpacity> */}
-
-          {/* <TouchableOpacity onPress={() => Actions.devocional()} style={styles.button}>
-            <Card
-              containerStyle={{ backgroundColor: 'grey', borderColor: 'grey' }}
-              wrapperStyle={{ backgroundColor: 'grey' }}>
-              <Text style={{ marginBottom: 10, color: 'white', fontSize: 16 }}>
-                Ruja como um leão
-            </Text>
-            </Card>
-          </TouchableOpacity> */}
-
+          
           <View style={styles.space}></View>
 
         </View>

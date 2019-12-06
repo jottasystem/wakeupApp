@@ -80,7 +80,7 @@ export default class LoginPage extends Component {
                 <View style={styles.singupTextCont}>
                     <Text style={styles.signupButton}>Ainda não possui uma conta?</Text>
                     <TouchableOpacity onPress={() => Actions.register()}>
-                        <Text style={styles.signupButton2}>Singup</Text>
+                        <Text style={styles.signupButton2}> Cadastre-se</Text>
                     </TouchableOpacity>
                 </View>
             </ImageBackground>

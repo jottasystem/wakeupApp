@@ -6,11 +6,13 @@ import {
   Image,
   TouchableOpacity,
   ScrollView,
+  FlatList
 } from "react-native";
 import { SliderBox } from 'react-native-image-slider-box';
 import { Card, ListItem, Button, Icon } from 'react-native-elements'
 import { Actions } from "react-native-router-flux";
-
+import Axios from "axios";
+import API from "../config/AppConstants"
 export default class BackupScreen extends Component {
 
   constructor(props) {
@@ -20,11 +22,25 @@ export default class BackupScreen extends Component {
         'http://wakeupmovement.com.br/wp-content/uploads/2019/05/df440ae2-39e7-4f13-8b96-049c34448443.jpg',
         'http://wakeupmovement.com.br/wp-content/uploads/2019/05/a68a3514-ef15-49d1-927c-959ad988a46e.jpg',
         'http://wakeupmovement.com.br/wp-content/uploads/2019/05/youtube.jpg',
-      ]
+      ],
+      devocional: []
     };
+    this.getDevocinal()
   }
+  getDevocinal() {
+    Axios.get(API.URL.URLPROD + "devocional/").then((sucess) => {
+      console.log("devocional", sucess)
+      if (sucess.data) {
 
+        this.setState({ devocional: sucess.data.docs })
+      }
+    }).catch((error) => {
+      console.log("error", error)
+    })
+  }
   render() {
+    let data = this.state.devocional
+
     return (
 
       <ScrollView style={styles.scrolls}>
@@ -53,19 +69,33 @@ export default class BackupScreen extends Component {
 
           <Text style={styles.titles}>   Devocional</Text>
 
-          <TouchableOpacity onPress={() => Actions.devocional()} style={styles.button}>
-            <Card
-              containerStyle={{ backgroundColor: '#3E3E3E', borderColor: '#3E3E3E' }}
-              wrapperStyle={{ backgroundColor: '#3E3E3E' }}
-              imageStyle={{ widht: 60, height: 185 }}
-              image={require('../images/banner3.jpg')}>
 
-              <Text style={{ marginBottom: 10, color: 'white', fontSize: 16 }}>
-                Entenda como surgiu esse movimento, saiba como essa história começou.
+
+
+          <FlatList
+            data={data}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            keyExtractor={(item, index) => index.toString()}
+            renderItem={({ item, index }) =>
+              <TouchableOpacity onPress={() => Actions.devocional({ item })} style={{width:250,height:250}}>
+                <Card
+                  containerStyle={{ backgroundColor: '#3E3E3E', borderColor: '#3E3E3E' }}
+                  wrapperStyle={{ backgroundColor: '#3E3E3E' }}
+                  imageStyle={{ widht: 20, height: 185 }}
+                  image={require('../images/banner3.jpg')}>
+
+                  <Text style={{ marginBottom: 10, color: 'white', fontSize: 16 }}>
+                  {item.titlePray}
             </Text>
 
-            </Card>
-          </TouchableOpacity>
+                </Card>
+              </TouchableOpacity>
+            }
+          />
+
+
+
         </View>
 
         <View style={styles.space}></View>
@@ -154,7 +184,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#363636",
     flexDirection: 'row',
-    paddingHorizontal:5
+    paddingHorizontal: 5
 
   },
   titles: {

@@ -50,6 +50,7 @@ export default class EventScreen extends Component {
   getEventDay = () => {
     this.setState({ loadingEvent: true })
     Axios.get("http://cristoematos.com.br/apiatos/calendar").then((calendar) => {
+      console.log("calendaar")
       let data = calendar.data.data
       let item;
       let objDynamic = {}
@@ -87,8 +88,6 @@ export default class EventScreen extends Component {
     })
     this.setState({ loadingEvent: false })
   }
-
-
 
 
   render() {
