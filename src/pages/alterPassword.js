@@ -59,7 +59,7 @@ export default class alterPassPage extends Component {
                 <View style={styles.space}></View>
 
                 <View style={styles.header}>
-                    <TouchableOpacity onPress={() => Actions.login()}>
+                    <TouchableOpacity onPress={() => Actions.pop()}>
                         <Image style={styles.containerlogo}
                             source={require('../images/voltar.png')} />
                     </TouchableOpacity>
@@ -150,6 +150,8 @@ const styles = StyleSheet.create({
         alignItems: "center",
         backgroundColor: "#363636",
         flexDirection: 'row',
+        paddingHorizontal:5
+
     },
     containerlogo: {
         justifyContent: "center",

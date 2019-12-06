@@ -6,8 +6,11 @@ import {
     TextInput,
     TouchableOpacity,
     Image,
+    Alert
 } from "react-native";
 import { Actions } from "react-native-router-flux";
+import Axios from "axios";
+import API from "../config/AppConstants"
 
 
 export default class alterPassPage extends Component {
@@ -19,6 +22,22 @@ export default class alterPassPage extends Component {
         }
     }
 
+    orderPray = () => {
+        let model = {
+            prayName: this.state.prayName ? this.state.prayName : "anonimo",
+            pray: this.state.pray
+        }
+        Axios.post(API.URL.URLPROD + "pray", model).then((sucess) => {
+            console.log("suce", sucess)
+            Alert.alert("Ore!", "Pedido de oração feito :D")
+            this.setState({ prayName: "", pray: "" })
+            Actions.refresh({key:Math.random()})
+
+        }).catch((error) => {
+            console.log("error", error)
+            Alert.alert("Falha", "Não foi possivel efetuar o login :(")
+        })
+    }
     render() {
         console.log(this.state)
         return (
@@ -28,7 +47,7 @@ export default class alterPassPage extends Component {
                 <View style={styles.space}></View>
 
                 <View style={styles.header}>
-                    <TouchableOpacity onPress={() => Actions.menu()}>
+                    <TouchableOpacity onPress={() => Actions.pop()}>
                         <Image style={styles.containerlogo}
                             source={require('../images/voltar.png')} />
                     </TouchableOpacity>
@@ -56,7 +75,7 @@ export default class alterPassPage extends Component {
                         placeholderTextColor="#ffffff"
                     />
 
-                    <TouchableOpacity onPress={() => Actions.alert()} style={styles.button}>
+                    <TouchableOpacity onPress={() => this.orderPray()} style={styles.button}>
                         <Text style={styles.registerButton}>Enviar</Text>
                     </TouchableOpacity>
                 </View>

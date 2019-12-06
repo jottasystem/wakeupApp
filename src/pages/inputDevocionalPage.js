@@ -6,9 +6,13 @@ import {
     TextInput,
     TouchableOpacity,
     Image,
+    Alert
 } from "react-native";
 import { Actions } from "react-native-router-flux";
+import Axios from "axios";
+import API from "../config/AppConstants"
 
+import InputScrollView from "react-native-input-scroll-view";
 
 export default class alterPassPage extends Component {
     constructor() {
@@ -20,54 +24,79 @@ export default class alterPassPage extends Component {
         }
     }
 
+    postDevocional = () => {
+        if (this.state.titlePray == "" &&
+            this.state.authorPray == "" &&
+            this.state.textPray == "") {
+            Alert.alert("Vazio!", "voce precisa passar informação para o novo devocional")
+            return
+        }
+        let model = {
+            "titlePray": this.state.titlePray,
+            "authorPray": this.state.authorPray,
+            "textPray": this.state.textPray
+        }
+        Axios.post(API.URL.URLPROD + "devocional", model).then((sucess) => {
+            console.log("suce", sucess)
+            Alert.alert("Criado!", "Membros serão notificado sobre o novo devocional")
+            this.setState({ titlePray: "", authorPray: "", textPray: "" })
+            Actions.refresh({ key: Math.random() })
+
+        }).catch((error) => {
+            console.log("error", error)
+            Alert.alert("Falha", "Não foi possivel criar devocional :(")
+        })
+    }
     render() {
         console.log(this.state)
         return (
             <View style={styles.container}>
-
-                <View style={styles.space}></View>
-
-                <View style={styles.header}>
-                    <TouchableOpacity onPress={() => Actions.administrator()}>
-                        <Image style={styles.containerlogo}
-                            source={require('../images/voltar.png')} />
-                    </TouchableOpacity>
-                    <Text style={styles.textHeader}> Novo devocional</Text>
-                </View>
-
-                <View style={styles.container2}>
+                <InputScrollView keyboardShouldPersistTaps="handled">
 
                     <View style={styles.space}></View>
 
-                    <Image style={styles.imageDevocional}
-                        source={require('../images/banner3.jpg')} />
+                    <View style={styles.header}>
+                        <TouchableOpacity onPress={() => Actions.pop()}>
+                            <Image style={styles.containerlogo}
+                                source={require('../images/voltar.png')} />
+                        </TouchableOpacity>
+                        <Text style={styles.textHeader}> Novo devocional</Text>
+                    </View>
 
-                    <TextInput
-                        onChangeText={value => this.setState({ titlePray: value })}
-                        style={styles.inputBox}
-                        placeholder="Título"
-                        underlineColorAndroid="rgba(0,0,0,0)"
-                        placeholderTextColor="#ffffff"
-                    />
-                    <TextInput
-                        onChangeText={value => this.setState({ authorPray: value })}
-                        style={styles.inputBox}
-                        placeholder="Nome do autor"
-                        underlineColorAndroid="rgba(0,0,0,0)"
-                        placeholderTextColor="#ffffff"
-                    />
-                    <TextInput
-                        onChangeText={value => this.setState({ textPray: value })}
-                        style={styles.inputBox2}
-                        placeholder="Digite o devocional aqui..."
-                        underlineColorAndroid="rgba(0,0,0,0)"
-                        placeholderTextColor="#ffffff"
-                    />
+                    <View style={styles.container2}>
 
-                    <TouchableOpacity onPress={() => Actions.alert()} style={styles.button}>
-                        <Text style={styles.registerButton}>Enviar</Text>
-                    </TouchableOpacity>
-                </View>
+                        <View style={styles.space}></View>
+
+                        <Image style={styles.imageDevocional}
+                            source={require('../images/banner3.jpg')} />
+
+                        <TextInput
+                            onChangeText={value => this.setState({ titlePray: value })}
+                            style={styles.inputBox}
+                            placeholder="Título"
+                            underlineColorAndroid="rgba(0,0,0,0)"
+                            placeholderTextColor="#ffffff"
+                        />
+                        <TextInput
+                            onChangeText={value => this.setState({ authorPray: value })}
+                            style={styles.inputBox}
+                            placeholder="Nome do autor"
+                            underlineColorAndroid="rgba(0,0,0,0)"
+                            placeholderTextColor="#ffffff"
+                        />
+                        <TextInput
+                            onChangeText={value => this.setState({ textPray: value })}
+                            style={styles.inputBox2}
+                            placeholder="Digite o devocional aqui..."
+                            underlineColorAndroid="rgba(0,0,0,0)"
+                            placeholderTextColor="#ffffff"
+                        />
+
+                        <TouchableOpacity onPress={() => this.postDevocional()} style={styles.button}>
+                            <Text style={styles.registerButton}>Enviar</Text>
+                        </TouchableOpacity>
+                    </View>
+                </InputScrollView>
             </View>
         )
     }

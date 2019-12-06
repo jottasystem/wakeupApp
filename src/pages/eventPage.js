@@ -211,5 +211,7 @@ header: {
   justifyContent: 'space-between',
   alignItems: "center",
   flexDirection: 'row',
+  paddingHorizontal:5
+
 },
 });

@@ -38,13 +38,13 @@ export default class AdministratorPage extends Component {
             <View style={styles.space}></View>
             <View style={styles.space}></View>
 
-            <TouchableOpacity onPress={() => Actions.input_event()} style={styles.button}>
+            {/* <TouchableOpacity onPress={() => Actions.input_event()} style={styles.button}>
               <View style={styles.blocsMenu}>
                 <Image style={styles.icones}
                   source={require('../images/calendar.png')} />
                 <Text style={{ color: 'white', fontSize: 20, fontWeight: '300' }}>  Eventos</Text>
               </View>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
 
             <View style={styles.space}></View>
 
@@ -63,6 +63,8 @@ const styles = StyleSheet.create({
   container2: {
     flex: 1,
     backgroundColor: '#3E3E3E',
+    paddingHorizontal:10
+
   },
   space: {
     width: 17,
@@ -85,6 +87,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#363636",
     flexDirection: 'row',
+    paddingHorizontal:5
   },
   blocsMenu: {
     flex: 1,

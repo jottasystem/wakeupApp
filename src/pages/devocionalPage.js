@@ -20,40 +20,41 @@ export default class DevocionalPage extends Component {
     }
 
     render() {
-        console.log(this.state)
+        console.log("dev ops", this.props)
+        let { item } = this.props
         return (
             <ScrollView style={{ backgroundColor: '#3E3E3E' }}>
-            <View style={styles.container}>
-                <View style={styles.space}></View>
-
-                <View style={styles.header}>
-                    <TouchableOpacity onPress={() => Actions.main_devocional()}>
-                        <Image style={styles.containerlogo}
-                            source={require('../images/voltar.png')} />
-                    </TouchableOpacity>
-                    <Text style={styles.titleHeader}> Devocional</Text>
-                </View>
-
-                <View style={styles.container2}>
-
-                    <Image style={styles.imageDevocional}
-                        source={require('../images/banner3.jpg')} />
-
+                <View style={styles.container}>
                     <View style={styles.space}></View>
 
-                    <Text style={styles.baseText}>
-                        <Text style={styles.titleHeader} onPress={this.onPressTitle}>
-                            {this.state.titleText}{'\n'}{'\n'}
-                        </Text>
-                        <Text numberOfLines={5}>
-                            {this.state.bodyText}
-                        </Text>
-                    </Text>
+                    <View style={styles.header}>
+                        <TouchableOpacity onPress={() => Actions.pop()}>
+                            <Image style={styles.containerlogo}
+                                source={require('../images/voltar.png')} />
+                        </TouchableOpacity>
+                        <Text style={styles.titleHeader}> Devocional</Text>
+                    </View>
 
-                    <View style={styles.space}></View>
+                    <View style={styles.container2}>
 
+                        <Image style={styles.imageDevocional}
+                            source={require('../images/banner3.jpg')} />
+
+                        <View style={styles.space}></View>
+
+                        <Text style={styles.baseText}>
+                            <Text style={styles.titleHeader} onPress={this.onPressTitle}>
+                                {item.titlePray}{'\n'}{'\n'}
+                            </Text>
+                            <Text numberOfLines={5}>
+                                {item.textPray}
+                            </Text>
+                        </Text>
+
+                        <View style={styles.space}></View>
+
+                    </View>
                 </View>
-            </View>
             </ScrollView>
         )
     }
@@ -88,6 +89,8 @@ const styles = StyleSheet.create({
         alignItems: "center",
         backgroundColor: "#363636",
         flexDirection: 'row',
+        paddingHorizontal:5
+
     },
     titleHeader: {
         color: 'white',

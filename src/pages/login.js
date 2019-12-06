@@ -21,8 +21,8 @@ export default class LoginPage extends Component {
     constructor() {
         super();
         this.state = {
-            email: "",
-            password: ""
+            email: "jotta.paulo27@gmail.com",
+            password: "102030"
         }
     }
 
@@ -34,7 +34,7 @@ export default class LoginPage extends Component {
         Axios.post(API.URL.URLPROD + "login", model).then((sucess) => {
             console.log("suce", sucess)
             Actions.main()
-            AsyncStorage.setItem("user", JSON.stringify(sucess))
+            AsyncStorage.setItem("user", JSON.stringify(sucess.data))
         }).catch((error) => {
             console.log("error", error)
             Alert.alert("Falha", "Não foi possivel efetuar o login :(")

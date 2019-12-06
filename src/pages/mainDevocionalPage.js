@@ -1,12 +1,36 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity } from 'react-native';
+import {
+  StyleSheet, Text, View, ScrollView, Image, TouchableOpacity, FlatList,
+} from 'react-native';
 import { Actions } from "react-native-router-flux";
+import Axios from "axios";
+import API from "../config/AppConstants"
 import { Card } from 'react-native-elements';
 
 export default class NotificationPage extends Component {
   static navigationOptions = { header: null };
+  constructor(props) {
+    super(props)
+    this.state = {
+      devocional: []
+    }
+    this.getDevocinal()
+  }
 
+  getDevocinal() {
+    Axios.get(API.URL.URLPROD + "devocional/").then((sucess) => {
+      console.log("devocional", sucess)
+      if (sucess.data) {
+
+        this.setState({ devocional: sucess.data.docs })
+      }
+    }).catch((error) => {
+      console.log("error", error)
+    })
+  }
   render() {
+    let data = this.state.devocional
+    console.log("dataa", data)
     return (
 
       <ScrollView style={{ backgroundColor: '#3E3E3E' }}>
@@ -26,17 +50,34 @@ export default class NotificationPage extends Component {
 
           <View style={styles.space}></View>
 
-          <TouchableOpacity onPress={() => Actions.devocional()} style={styles.button}>
-            <Card
-              containerStyle={{ backgroundColor: 'grey', borderColor: 'grey' }}
-              wrapperStyle={{ backgroundColor: 'grey' }}>
-              <Text style={{ marginBottom: 10, color: 'white', fontSize: 16 }}>
-                O começo de tudo
-            </Text>
-            </Card>
-          </TouchableOpacity>
+          <FlatList
+            data={data}
+            keyExtractor={(item, index) => index.toString()}
+            renderItem={({ item, index }) =>
+              <TouchableOpacity onPress={() => Actions.devocional({ item })} style={styles.button}>
+                <Card
+                  containerStyle={{ backgroundColor: 'grey', borderColor: 'grey' }}
+                  wrapperStyle={{ backgroundColor: 'grey' }}>
+                  <Text style={{ marginBottom: 10, color: 'white', fontSize: 16 }}>
+                    {item.titlePray}
+                  </Text>
+                </Card>
+              </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => Actions.devocional()} style={styles.button}>
+
+
+
+
+            }
+          />
+
+
+
+
+
+
+
+          {/* <TouchableOpacity onPress={() => Actions.devocional()} style={styles.button}>
             <Card
               containerStyle={{ backgroundColor: 'grey', borderColor: 'grey' }}
               wrapperStyle={{ backgroundColor: 'grey' }}>
@@ -44,9 +85,9 @@ export default class NotificationPage extends Component {
                 Não desista de sonhar
             </Text>
             </Card>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
 
-          <TouchableOpacity onPress={() => Actions.devocional()} style={styles.button}>
+          {/* <TouchableOpacity onPress={() => Actions.devocional()} style={styles.button}>
             <Card
               containerStyle={{ backgroundColor: 'grey', borderColor: 'grey' }}
               wrapperStyle={{ backgroundColor: 'grey' }}>
@@ -54,7 +95,7 @@ export default class NotificationPage extends Component {
                 Ruja como um leão
             </Text>
             </Card>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
 
           <View style={styles.space}></View>
 

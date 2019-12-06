@@ -1,21 +1,41 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Button, ScrollView, Image, TouchableOpacity } from 'react-native';
+import {
+  StyleSheet, Text, View, Alert,
+  AsyncStorage, ScrollView, Image, TouchableOpacity
+} from 'react-native';
 import { Actions } from "react-native-router-flux";
+import Axios from "axios";
+import API from "../config/AppConstants"
 
 export default class MenuPage extends Component {
   static navigationOptions = { header: null };
 
+  constructor(props) {
+    super(props)
+    this.state = {
+    }
+    this.getInfo()
+  }
+  getInfo = () => {
+    AsyncStorage.getItem("user").then((sucess) => {
+      let user = JSON.parse(sucess)
+      this.setState({ ...user })
+    })
+  }
   render() {
     return (
 
       <ScrollView style={{ backgroundColor: '#3E3E3E' }}>
-
         <View style={styles.container}>
 
           <View style={styles.space}></View>
           <View style={styles.space}></View>
           <TouchableOpacity onPress={() => Actions.profile()} style={styles.button}>
             <View style={styles.header}>
+              <TouchableOpacity onPress={() => Actions.popTo("main")}>
+                <Image style={styles.containerlogo}
+                  source={require('../images/voltar.png')} />
+              </TouchableOpacity>
               <Image style={styles.imagePerfil}
                 source={require('../images/perfil.jpg')} />
               <Text style={styles.titleHeader}>  Perfil</Text>
@@ -50,7 +70,7 @@ export default class MenuPage extends Component {
           <View style={styles.space}></View>
           <View style={styles.space}></View>
 
-          <TouchableOpacity onPress={() => Actions.alter_page()} style={styles.button}>
+          <TouchableOpacity onPress={() => Actions.alter_page({user:this.state})} style={styles.button}>
             <View style={styles.viewsMenu}>
               <View style={styles.space2}></View>
               <Image style={{ width: 27, height: 27 }}
@@ -163,5 +183,25 @@ const styles = StyleSheet.create({
     width: 50,
     height: 41,
     borderRadius: 27,
-  }
+  },
+  header: {
+    height: 60,
+    justifyContent: 'flex-start',
+    alignItems: "center",
+    backgroundColor: "#363636",
+    flexDirection: 'row',
+  },
+  textHeader: {
+    color: 'white',
+    fontSize: 18,
+    fontWeight: '600',
+  },
+  containerlogo: {
+    justifyContent: "center",
+    alignItems: "flex-start",
+    width: 20,
+    height: 21,
+    marginLeft: 5,
+    marginRight: 10
+  },
 });

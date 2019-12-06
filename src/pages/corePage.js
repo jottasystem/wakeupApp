@@ -154,6 +154,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#363636",
     flexDirection: 'row',
+    paddingHorizontal:5
+
   },
   titles: {
     color: 'white',

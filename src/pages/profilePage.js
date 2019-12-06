@@ -6,8 +6,12 @@ import {
     TextInput,
     TouchableOpacity,
     Image,
+    Alert,
+    AsyncStorage
 } from "react-native";
 import { Actions } from "react-native-router-flux";
+import Axios from "axios";
+import API from "../config/AppConstants"
 
 
 export default class RegisterPage extends Component {
@@ -16,20 +20,45 @@ export default class RegisterPage extends Component {
         this.state = {
             name: "",
             data_nasc: "",
+            cpf: "",
             email: "",
             celular: "",
+            _id:""
         }
+        this.getInfo()
     }
     getInfo = () => {
+        AsyncStorage.getItem("user").then((sucess) => {
+            console.log("olha o user", JSON.parse(sucess))
+            let user = JSON.parse(sucess)
+
+            Axios.get(API.URL.URLPROD + "register/" + user._id).then((sucess) => {
+                console.log("atualizada", sucess)
+                this.setState({ ...sucess.data })
+            }).catch((error) => {
+                console.log("error", error)
+            })
+        })
+    }
+
+    updateUser = () => {
         let model = {
-            email: this.state.email,
-            password: this.state.password
+            "name": this.state.name,
+            "cpf": this.state.cpf,
+            "data_nasc": this.state.data_nasc,
+            "email": this.state.email,
+            "celular": this.state.celular,
         }
-        Axios.post(API.URL.URLPROD + "login", model).then((sucess) => {
+
+        Axios.put(API.URL.URLPROD + "register/" + this.state._id, model).then((sucess) => {
+            console.log("suce", sucess)
+            AsyncStorage.setItem("user", JSON.stringify(sucess.data))
             Actions.main()
+            Alert.alert("Sucesso!", "Dados alterados :)")
+
         }).catch((error) => {
             console.log("error", error)
-            Alert.alert("Falha", "Não foi possivel efetuar o login :(")
+            Alert.alert("Falha", "Não foi possivel trocar senha :(")
         })
     }
     render() {
@@ -39,7 +68,7 @@ export default class RegisterPage extends Component {
                 <View style={styles.space}></View>
 
                 <View style={styles.header}>
-                    <TouchableOpacity onPress={() => Actions.main()}>
+                    <TouchableOpacity onPress={() => Actions.pop()}>
                         <Image style={styles.containerlogo}
                             source={require('../images/voltar.png')} />
                     </TouchableOpacity>
@@ -56,6 +85,7 @@ export default class RegisterPage extends Component {
                     <View style={styles.space}></View>
 
                     <TextInput
+                        value={this.state.name}
                         onChangeText={value => this.setState({ name: value })}
                         style={styles.inputBox}
                         placeholder="Name"
@@ -63,6 +93,7 @@ export default class RegisterPage extends Component {
                         placeholderTextColor="#ffffff"
                     />
                     <TextInput
+                        value={this.state.data_nasc}
                         onChangeText={value => this.setState({ data_nasc: value })}
                         style={styles.inputBox}
                         placeholder="Data de Nascimento"
@@ -70,6 +101,7 @@ export default class RegisterPage extends Component {
                         placeholderTextColor="#ffffff"
                     />
                     <TextInput
+                        value={this.state.email}
                         onChangeText={value => this.setState({ email: value })}
                         style={styles.inputBox}
                         placeholder="E-mail"
@@ -77,17 +109,18 @@ export default class RegisterPage extends Component {
                         placeholderTextColor="#ffffff"
                     />
                     <TextInput
+                        value={this.state.celular}
+
                         onChangeText={value => this.setState({ celular: value })}
                         style={styles.inputBox}
                         placeholder="Celular"
                         underlineColorAndroid="rgba(0,0,0,0)"
                         placeholderTextColor="#ffffff"
-                        secureTextEntry={true}
                     />
 
                     <View style={styles.space}></View>
 
-                    <TouchableOpacity onPress={() => Actions.main()} style={styles.button}>
+                    <TouchableOpacity onPress={() => this.updateUser()} style={styles.button}>
                         <Text style={styles.registerButton}>Salvar</Text>
                     </TouchableOpacity>
                 </View>

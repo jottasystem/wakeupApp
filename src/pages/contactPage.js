@@ -19,7 +19,7 @@ export default class ContactPage extends Component {
                 <View style={styles.space}></View>
 
                 <View style={styles.header}>
-                    <TouchableOpacity onPress={() => Actions.menu()}>
+                    <TouchableOpacity onPress={() => Actions.pop()}>
                         <Image style={styles.containerlogo}
                             source={require('../images/voltar.png')} />
                     </TouchableOpacity>
@@ -133,7 +133,9 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
         alignItems: "center",
         backgroundColor: "#363636",
-        flexDirection: 'row'
+        flexDirection: 'row',
+        paddingHorizontal:5
+
     },
     titleHeader: {
         color: 'white',
