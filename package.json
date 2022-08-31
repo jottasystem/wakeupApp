@@ -9,7 +9,7 @@
   "dependencies": {
     "axios": "0.18.0",
     "checkbox": "0.0.1",
-    "moment-timezone": "^0.5.27",
+    "moment-timezone": "^0.5.35",
     "native-base": "2.13.8",
     "react": "16.6.3",
     "react-native": "0.58.0",
