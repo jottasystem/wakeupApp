@@ -12,7 +12,7 @@
     "moment-timezone": "^0.5.27",
     "native-base": "2.13.8",
     "react": "16.6.3",
-    "react-native": "0.58.0",
+    "react-native": "0.70.4",
     "react-native-calendars": "^1.214.0",
     "react-native-elements": "^1.2.7",
     "react-native-image-slider-box": "^1.0.5",
